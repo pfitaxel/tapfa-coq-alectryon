@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>Aperçu des fonctionnalités de Coq</title>
+<meta name="date" content="L3 Info, Semestre 6, Année 2020-2021" />
+<link rel="stylesheet" href="alectryon.css" type="text/css" />
+<link rel="stylesheet" href="docutils_basic.css" type="text/css" />
+<link rel="stylesheet" href="tango_subtle.css" type="text/css" />
+<link rel="stylesheet" href="tango_subtle.min.css" type="text/css" />
+<script type="text/javascript" src="alectryon.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
+<link rel="stylesheet" href="math.css" type="text/css" />
+</head>
+<body>
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.0. Coq sources are in this panel; goals and messages will appear in the other. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus.</div><div class="document" id="apercu-des-fonctionnalites-de-coq">
+<h1 class="title">Aperçu des fonctionnalités de Coq</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="auteurs field"><th class="docinfo-name">Auteurs:</th><td class="field-body">Jean-Paul Bodeveix (resp. UE), Erik Martin-Dorel, Pierre Roux</td>
+</tr>
+<tr><th class="docinfo-name">Date:</th>
+<td>L3 Info, Semestre 6, Année 2020-2021</td></tr>
+</tbody>
+</table>
+<input type="checkbox" class="alectryon-toggle" id="alectryon-toggle-0" /><label for="alectryon-toggle-0" class="alectryon-toggle-label">Display all goals and responses</label><div class="alectryon-container docutils container">
+<div class="section" id="id1">
+<h1>Aperçu des fonctionnalités de Coq</h1>
+<div class="section" id="presentation-du-logiciel-coq">
+<h2>Présentation du logiciel Coq</h2>
+<ul class="simple">
+<li>Implémenté en OCaml</li>
+</ul>
+<a class="reference external image-reference" href="https://coq.inria.fr"><img alt="Coq" src="https://coq.inria.fr/files/barron_logo.png" /></a>
+<ul class="simple">
+<li>Initié par Thierry Coquand et Gérard Huet, et développé par Inria
+depuis 1984 (la dernière version stable étant, lors de l'écriture de
+ce document, Coq 8.13).</li>
+</ul>
+<a class="reference external image-reference" href="https://github.com/coq/coq/releases"><img alt="coq latest version" src="https://img.shields.io/docker/v/coqorg/coq/latest" /></a>
+<ul>
+<li><p class="first">Comprend un langage fonctionnel pur, statiquement typé, et
+<em>très expressif</em> (on détaillera cet aspect dans quelques minutes),
+muni d’un environnement de preuve interactive (vu au Cours n°2).</p>
+</li>
+<li><p class="first">Coq a une grande communauté d’utilisateurs. Projets notables :</p>
+<ul>
+<li><p class="first">CompCert : compilateur C99 complètement prouvé en Coq [Inria]</p>
+</li>
+<li><p class="first">C-CoRN : bibliothèque d’analyse constructive [à Nijmegen]</p>
+</li>
+<li><p class="first">Preuve formelle du théorème des 4 couleurs [G.&nbsp;Gonthier,
+B.&nbsp;Werner]</p>
+</li>
+<li><p class="first">MathComp : bibliothèque d’algèbre et preuve formelle du théorème
+de Feit–Thompson (la preuve papier fait <span class="formula"> &gt; 300</span> pages)
+[Inria, Microsoft Research]</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Vérification de systèmes critiques (voir par exemple :</div>
+<div class="line"><a class="reference external" href="https://github.com/ligurio/practical-fm">https://github.com/ligurio/practical-fm</a>)</div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Ouvrage (publié chez Springer et téléchargeable en français) :</p>
+<p><a class="reference external" href="http://www.labri.fr/perso/casteran/CoqArt/coqartF.pdf">Coq'Art: Interactive Theorem Proving and Program Development</a></p>
+</li>
+</ul>
+</div>
+<div class="section" id="caracteristiques-interessantes-de-coq">
+<h2>Caractéristiques intéressantes de Coq</h2>
+<ul>
+<li><p class="first">langage fonctionnel pur proche d’OCaml</p>
+<ul class="simple">
+<li>terminaison garantie (impossible d’écrire <tt class="docutils literal">let rec f x = f x</tt>)</li>
+<li>typage fort et très expressif (on peut définir des listes à taille
+fixée, des fonctions à arité variable, etc.)</li>
+</ul>
+</li>
+<li><div class="first line-block">
+<div class="line">langage logique (expression de formules quantifiées, etc.)</div>
+<div class="line"><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">nat</span><span class="operator">,</span> <span class="name">n</span> <span class="operator">&gt;</span> <span class="literal number integer">0</span> <span class="operator">-&gt;</span> <span class="keyword reserved">exists</span> <span class="name variable">m</span> <span class="operator">:</span> <span class="name">nat</span><span class="operator">,</span> <span class="name">S</span> <span class="name">m</span> <span class="operator">=</span> <span class="name">n</span></code></div>
+</div>
+</li>
+<li><p class="first">environnement de preuve (assistance à la construction de preuve)</p>
+</li>
+<li><div class="first line-block">
+<div class="line">vérification automatique de la correction de ces preuves</div>
+<div class="line">vérification de preuve = vérification de type</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line">tactiques utilisateur pour automatiser les preuves :</div>
+<div class="line"><code class="highlight coq"><span class="name builtin pseudo">tauto</span></code> pour la logique des propositions,</div>
+<div class="line"><code class="highlight coq"><span class="name builtin">firstorder</span></code> pour la logique du premier ordre,</div>
+<div class="line"><code class="highlight coq"><span class="name builtin pseudo">lia</span></code> pour l’arithmétique linéaire sur les entiers
+(<code class="highlight coq"><span class="literal number integer">2</span> <span class="operator">*</span> <span class="operator">(</span><span class="name">n</span> <span class="operator">+</span> <span class="literal number integer">1</span><span class="operator">)</span> <span class="operator">-</span> <span class="name">n</span> <span class="operator">&gt;</span> <span class="name">n</span></code>)</div>
+<div class="line">etc.</div>
+</div>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Require Import</span> Lia. <span class="c">(* pour utiliser la tactique &quot;lia&quot; *)</span></span></span></span></pre></li>
+</ul>
+</div>
+<div class="section" id="rappel-installation-de-lenvironnement-de-tp">
+<h2>Rappel : installation de l’environnement de TP</h2>
+<div class="section" id="environnement-recommande">
+<h3>Environnement recommandé</h3>
+<ul class="simple">
+<li>Coq 8.12 + Emacs + ProofGeneral + Company-Coq [cf. tutoriel ci-dessous]</li>
+<li>Carte de référence / raccourcis clavier [cf. Moodle]</li>
+<li>Dictionnaire OCaml/Coq [cf. Moodle]</li>
+</ul>
+</div>
+<div class="section" id="tutoriel-dinstallation">
+<h3>Tutoriel d’installation</h3>
+<ul>
+<li><p class="first">avec OPAM, sous GNU/Linux, macOS ou Windows 10 :</p>
+<p><a class="reference external" href="https://github.com/erikmd/tapfa-init.el">https://github.com/erikmd/tapfa-init.el</a></p>
+</li>
+<li><p class="first"><em>n’hésitez pas à poser des questions sur Moodle/Discord ;
+on vous demandera un feedback au dernier TP.</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="utilisations-possibles-de-coq">
+<h2>Utilisations possibles de Coq</h2>
+<ul class="simple">
+<li>Synthèse du type d’une expression :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk0"><span class="highlight"><span class="kn">Check</span> <span class="kr">fun</span> <span class="nv">x</span> <span class="nv">y</span> =&gt; x + y + <span class="mi">1</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">fun</span> <span class="nv">x</span> <span class="nv">y</span> : nat =&gt; x + y + <span class="mi">1</span>
+     : nat -&gt; nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre><ul class="simple">
+<li>Évaluation d’expressions (calcul) :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> (<span class="kr">fun</span> <span class="nv">x</span> <span class="nv">y</span> =&gt; x+y+<span class="mi">1</span>) <span class="mi">2</span> <span class="mi">3</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">6</span>
+: nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre><ul class="simple">
+<li>Implantation de fonctions et vérification de leurs propriétés :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">f</span> <span class="nv">x</span> := x + <span class="mi">2</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2"><span class="highlight"><span class="kn">Theorem</span> <span class="nf">f_croissante</span> : <span class="kr">forall</span> <span class="nv">x</span> <span class="nv">y</span> : nat, x &lt; y -&gt; f x &lt; f y.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">x</span> <span class="nv">y</span> : nat, x &lt; y -&gt; f x &lt; f y</span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk3"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">x</span> <span class="nv">y</span> : nat, x &lt; y -&gt; f x &lt; f y</span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* On ne détaille pas pour le moment le script de preuve =&gt; Cours 2 *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Qed</span>.</span></span></span></pre><ul class="simple">
+<li>Définition de sous-types :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">Mod3</span> := {x : nat | x &lt; <span class="mi">3</span>}.</span></span></span></pre><ul class="simple">
+<li>Synthèse de fonctions à partir d’une preuve de sa spécification :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk4"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pred</span> :
+  <span class="kr">forall</span> <span class="nv">n</span> : nat, <span class="c">(* précond *)</span> n &gt; <span class="mi">0</span> -&gt;
+    {m : nat | <span class="c">(* postcond *)</span> S m = n}.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk5"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* On ne détaille pas pour le moment le script de preuve *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Defined</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Require</span> <span class="kn">Extraction</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Génération automatique de code OCaml à partir du code Coq prouvé *)</span>
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk6" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk6"><span class="highlight"><span class="kn">Recursive Extraction</span> pred.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">
+type nat =
+| O
+| S of nat
+
+type &#39;a sig0 = &#39;a
+  <span class="c">(* singleton inductive, whose constructor was exist *)</span>
+
+<span class="sd">(** val pred : nat -&gt; nat **)</span>
+
+<span class="kr">let</span> <span class="nv">pred</span> = function
+| O -&gt; <span class="nb">assert</span> false <span class="c">(* absurd case *)</span>
+| S n&#39; -&gt; n&#39;
+</span></blockquote></div></div></small></span></pre></div>
+</div>
+<div class="section" id="motivations-pour-utiliser-coq">
+<h1>Motivations pour utiliser Coq</h1>
+<div class="section" id="positionnement-de-coq-par-rapport-aux-types-abstraits">
+<h2>Positionnement de Coq par rapport aux types abstraits</h2>
+<div class="section" id="par-rapport-a-pfita">
+<h3>Par rapport à PFITA</h3>
+<ul>
+<li><p class="first"><strong>explicitation des axiomes</strong> dans la spécification des types abstraits</p>
+</li>
+<li><p class="first"><strong>preuve formelle</strong> que l'implémentation satisfait bien la spécification</p>
+</li>
+<li><p class="first">compilation et <strong>vérification</strong> modulaire possible</p>
+<p>(implémentation et <strong>vérification</strong> d'un composant utilisateur
+indépendemment de l'implémentation du composant utilisé)</p>
+</li>
+<li><p class="first">donc : plus besoin de tests unitaires ou d'intégration...</p>
+</li>
+<li><p class="first">mais : Toujours besoin de <strong>validation</strong> de l'implémentation par
+rapport aux exigences attendues (qui peuvent différer des exigences
+exprimées dans le cahier des charges !)</p>
+<p>Voir aussi : la notion de <a class="reference external" href="https://en.wikipedia.org/wiki/V%20&amp;%20V">V &amp; V</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="exemple-de-verification-modulaire">
+<h2>Exemple de vérification modulaire</h2>
+<ul class="simple">
+<li>Définition d'une signature</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Module Type</span> <span class="nf">tPickGt</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Parameter</span> <span class="nv">pick</span> : nat -&gt; nat.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Axiom</span> <span class="nv">pick_gt</span> : <span class="kr">forall</span> <span class="nv">n</span>, pick n &gt; n.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">End</span> <span class="nf">tPickGt</span>.</span></span></span></pre><ul class="simple">
+<li>Implantation de la signature</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Module</span> <span class="nf">PickGt</span> &lt;: tPickGt. <span class="c">(* vérif conformité sans masquage *)</span></span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pick</span> <span class="nv">n</span> := S n.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk7"><span class="highlight"><span class="kn">Lemma</span> <span class="nf">pick_gt</span> : <span class="kr">forall</span> <span class="nv">n</span>, pick n &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, pick n &gt; n</span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk8"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, pick n &gt; n</span></div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="nb">auto</span>.</span></span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Qed</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">End</span> <span class="nf">PickGt</span>.</span></span></span></pre><ul class="simple">
+<li>Utilisation d'un module respectant la signature</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Module</span> <span class="nf">Use</span> (P : tPickGt).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">num</span> := P.pick O.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk9"><span class="highlight"><span class="kn">Lemma</span> <span class="nf">num_gt0</span> : num &gt; O.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight">num &gt; <span class="mi">0</span></span></div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chka" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chka"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight">num &gt; <span class="mi">0</span></span></div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="nb">apply</span> P.pick_gt.</span></span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Qed</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">End</span> <span class="nf">Use</span>.</span></span></span></pre><ul class="simple">
+<li>Instantiation du module paramétré</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Module</span> <span class="nf">M</span> := Use(PickGt).</span></span></span></pre></div>
+</div>
+<div class="section" id="introduction-a-coq">
+<h1>Introduction à Coq</h1>
+<div class="section" id="types-et-expressions">
+<h2>Types et expressions</h2>
+<div class="line-block">
+<div class="line">À retenir En Coq, tout terme bien formé a un type (y compris les types !)</div>
+<div class="line">donc contrairement à OCaml, les termes/expressions et les types ne
+forment pas deux &quot;collections disjointes&quot;</div>
+</div>
+<div class="section" id="exemples-dexpressions-coq-et-leur-type">
+<h3>Exemples d’expressions Coq et leur type</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="24%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">valeur/programme</th>
+<th class="head">type</th>
+<th class="head">type de type</th>
+<th class="head">…</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>0</td>
+<td>nat</td>
+<td>Set</td>
+<td>…</td>
+</tr>
+<tr><td>true</td>
+<td>bool</td>
+<td>Set</td>
+<td>…</td>
+</tr>
+<tr><td>fun x =&gt; x + 1</td>
+<td>nat -&gt; nat</td>
+<td>Set</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="exemples-en-coq">
+<h2>Exemples en Coq</h2>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkb"><span class="highlight"><span class="kn">Check</span> <span class="mi">0</span>. <span class="c">(* 0 : nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">0</span>
+     : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkc"><span class="highlight"><span class="kn">Check</span> true. <span class="c">(* true : bool *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
+     : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkd"><span class="highlight"><span class="kn">Check</span> <span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>. <span class="c">(* fun x =&gt; x + 1 : nat -&gt; nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">fun</span> <span class="nv">x</span> : nat =&gt; x + <span class="mi">1</span>
+     : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chke"><span class="highlight"><span class="kn">Check</span> nat. <span class="c">(* nat : Set *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">nat
+     : <span class="kt">Set</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkf"><span class="highlight"><span class="kn">Check</span> <span class="kt">Set</span>. <span class="c">(* Set : Type *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kt">Set</span>
+     : <span class="kt">Type</span></span></blockquote></div></div></small></span></pre><div class="section" id="exemples-avances-dexpressions-coq-et-leur-type">
+<h3>Exemples avancés d’expressions Coq et leur type.</h3>
+<p>Remarque :</p>
+<ul class="simple">
+<li><code class="highlight coq"><span class="keyword type">Prop</span></code> est le type des formules logiques ;</li>
+<li>à ne pas confondre avec <code class="highlight coq"><span class="name">bool</span></code>, le type des booléens.</li>
+</ul>
+<p>Les deux ont leur utilité :</p>
+<ul class="simple">
+<li>les prédicats renvoyant un <code class="highlight coq"><span class="name">bool</span></code> correspondent à des &quot;prédicats calculables&quot;
+(par exemple un algorithme décidant si un entier est pair ou pas) :
+on peut déterminer leur résultat par un <em>calcul</em> ;</li>
+<li>les prédicats renvoyant un <code class="highlight coq"><span class="keyword type">Prop</span></code> correspondent à des &quot;prédicats logiques&quot;
+(définis par une formule) :
+on peut prouver leur véracité par un <em>raisonnement</em>.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="26%" />
+<col width="23%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">valeur/programme</th>
+<th class="head">type</th>
+<th class="head">type de type</th>
+<th class="head">…</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>list</td>
+<td>Type -&gt; Type</td>
+<td>Type</td>
+<td>…</td>
+</tr>
+<tr><td>&quot;preuve de <code class="highlight coq"><span class="literal number integer">1</span><span class="operator">&lt;</span><span class="literal number integer">2</span></code>&quot;</td>
+<td>1 &lt; 2</td>
+<td>Prop</td>
+<td>…</td>
+</tr>
+<tr><td>&quot;(1,
+preuve de <code class="highlight coq"><span class="literal number integer">1</span><span class="operator">&gt;</span><span class="literal number integer">0</span></code>)&quot;</td>
+<td>{x: nat | x&gt;0}</td>
+<td>Set</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body>
+</html>

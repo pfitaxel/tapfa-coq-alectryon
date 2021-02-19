@@ -72,6 +72,7 @@ de Feit–Thompson (la preuve papier fait <span class="formula"> &gt; 300</s
 <p><a class="reference external" href="http://www.labri.fr/perso/casteran/CoqArt/coqartF.pdf">Coq'Art: Interactive Theorem Proving and Program Development</a></p>
 </li>
 </ul>
+<p>TODO Fiat-Crypto</p>
 </div>
 <div class="section" id="caracteristiques-interessantes-de-coq">
 <h2>Caractéristiques intéressantes de Coq</h2>
@@ -154,7 +155,9 @@ on vous demandera un feedback au dernier TP.</em></p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">Mod3</span> := {x : nat | x &lt; <span class="mi">3</span>}.</span></span></span></pre><ul class="simple">
 <li>Synthèse de fonctions à partir d’une preuve de sa spécification :</li>
 </ul>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk4"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pred</span> :
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* TODO Replace with list example *)</span>
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk4"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pred</span> :
   <span class="kr">forall</span> <span class="nv">n</span> : nat, <span class="c">(* précond *)</span> n &gt; <span class="mi">0</span> -&gt;
     {m : nat | <span class="c">(* postcond *)</span> S m = n}.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk5"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
@@ -277,7 +280,9 @@ forment pas deux &quot;collections disjointes&quot;</div>
 </div>
 <div class="section" id="exemples-en-coq">
 <h2>Exemples en Coq</h2>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkb"><span class="highlight"><span class="kn">Check</span> <span class="mi">0</span>. <span class="c">(* 0 : nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">0</span>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* TODO unfold *)</span>
+
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkb"><span class="highlight"><span class="kn">Check</span> <span class="mi">0</span>. <span class="c">(* 0 : nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">0</span>
      : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkc"><span class="highlight"><span class="kn">Check</span> true. <span class="c">(* true : bool *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
      : bool</span></blockquote></div></div></small><span class="alectryon-wsp">

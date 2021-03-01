@@ -460,15 +460,15 @@ il faut expliciter ces arguments.</p>
 <h2>Généricité</h2>
 <p>Une fonction générique prend un type en paramètre.</p>
 <p>Exemple de définition d'une fonction générique : la fonction identité.</p>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) =&gt; <span class="kr">fun</span> (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id</span> := <span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) =&gt; <span class="kr">fun</span> (<span class="nv">x</span> : T) =&gt; x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v2</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v2</span> := <span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) =&gt; x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v3</span> (<span class="nv">T</span>:<span class="kt">Type</span>) := <span class="kr">fun</span> (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v3</span> (<span class="nv">T</span> : <span class="kt">Type</span>) := <span class="kr">fun</span> (<span class="nv">x</span> : T) =&gt; x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v4</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) := x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v4</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) := x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v5</span> <span class="nv">T</span> (<span class="nv">x</span>:T) := x.</span></span></span></pre><p><span class="formula">⇝</span> ces fonctions ont toutes 2 arguments !</p>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v5</span> <span class="nv">T</span> (<span class="nv">x</span> : T) := x.</span></span></span></pre><p><span class="formula">⇝</span> ces fonctions ont toutes 2 arguments !</p>
 <p>Utilisation d’une fonction générique</p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk1e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1e"><span class="highlight"><span class="kn">Check</span> id nat.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id nat
      : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
@@ -493,10 +493,10 @@ il faut expliciter ces arguments.</p>
 <h2>Généricité et typage</h2>
 <p>Type d’une fonction générique</p>
 <ul class="simple">
-<li>En OCaml : <tt class="docutils literal">id: 'a <span class="pre">-&gt;</span> 'a</tt> <span class="formula">⇝</span> pour tout type <tt class="docutils literal">'a</tt>,
+<li>En OCaml : <tt class="docutils literal">id : 'a <span class="pre">-&gt;</span> 'a</tt> <span class="formula">⇝</span> pour tout type <tt class="docutils literal">'a</tt>,
 id prend un argument de type <tt class="docutils literal">'a</tt> et retourne un résultat de
 type <tt class="docutils literal">'a</tt></li>
-<li>En Coq : <code class="highlight coq"><span class="name">id</span><span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">a</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span></code> <span class="formula">⇝</span> la quantification
+<li>En Coq : <code class="highlight coq"><span class="name">id</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">a</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span></code> <span class="formula">⇝</span> la quantification
 est explicite</li>
 <li>extension du langage des termes :</li>
 </ul>
@@ -531,7 +531,7 @@ d'une fonction polymorphe.</p>
 <p>Redéfinissons la fonction id après activation des arguments implicites</p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Set Implicit Arguments</span>. <span class="c">(* au début du fichier en principe *)</span></span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id&#39;</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) := x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id&#39;</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) := x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk24" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk24"><span class="highlight"><span class="kn">Print</span> id&#39;.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; = 
 <span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) =&gt; x
      : <span class="kr">forall</span> <span class="nv">T</span> : <span class="kt">Type</span>, T -&gt; T
@@ -547,21 +547,14 @@ d'une fonction polymorphe.</p>
 <span class="kn">Arguments</span> id _%type_scope</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
-<span class="c">(* mais *)</span>
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk26" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk26"><span class="highlight"><span class="kn">About</span> id&#39;.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; : <span class="kr">forall</span> [T : <span class="kt">Type</span>], T -&gt; T
-
-id&#39; <span class="kr">is</span> not universe polymorphic
-<span class="kn">Arguments</span> id&#39; [T]%type_scope
-id&#39; <span class="kr">is</span> transparent
-Expands to: Constant SerTop.id&#39;</span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* id&#39; : forall [T : Type], T -&gt; T *)</span></span></span></pre><p>l'argument T est implicite : il peut être inféré à partir de l'argument d'après.</p>
+<span class="c">(* mais observer le [T] au lieu de _ *)</span></span></span></pre><p>l'argument T est implicite : il peut être inféré à partir de l'argument d'après.</p>
 <p>D'où une syntaxe concise à la OCaml :</p>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk27" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk27"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; <span class="mi">0</span>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk26" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk26"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; <span class="mi">0</span>
      : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Set Printing All</span>. <span class="c">(* affiche tout, dont les arguments implicites *)</span></span></span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk28" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk28"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">@id&#39; nat O
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk27" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk27"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">@id&#39; nat O
      : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
@@ -590,9 +583,9 @@ Expands to: Constant SerTop.id&#39;</span></blockquote></div></div></small><span
 déclarer ces paramètres de généricité lors de la définition.</p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
 
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span>:T1): T3 := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span> : T1) : T3 := g (f x).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v2</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span>:T1) := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v2</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span> : T1) := g (f x).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v3</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) <span class="nv">x</span> := g (f x).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
@@ -600,7 +593,7 @@ déclarer ces paramètres de généricité lors de la définition.</p>
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v5</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) <span class="nv">g</span> (<span class="nv">x</span>:T1) : T3 := g (f x).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk29" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk29"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> comp (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>) (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x * <span class="mi">2</span>) <span class="mi">3</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">8</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk28" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk28"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> comp (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>) (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x * <span class="mi">2</span>) <span class="mi">3</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">8</span>
 : nat</span></blockquote></div></div></small></span></pre></div>
 <div class="section" id="exercices">
 <h2>Exercices</h2>
@@ -609,7 +602,7 @@ déclarer ces paramètres de généricité lors de la définition.</p>
 </ol>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">mult2</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic" start="2">
 <li><div class="first line-block">
-<div class="line"><strong>Supposons défini</strong> le prédicat <code class="highlight coq"><span class="name">leq</span><span class="operator">:</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">bool</span></code>,
+<div class="line"><strong>Supposons défini</strong> le prédicat <code class="highlight coq"><span class="name">leq</span> <span class="operator">:</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">bool</span></code>,
 retournant <code class="highlight coq"><span class="name">true</span></code> si son 1er argument est inférieur à son second.</div>
 <div class="line">Définir la fonction <tt class="docutils literal">max</tt> retournant le plus grand de ses 2 arguments.</div>
 <div class="line">En déduire la fonction <tt class="docutils literal">max3</tt> retournant le plus grand de ses 3 arguments.</div>
@@ -763,21 +756,21 @@ retournant <code class="highlight coq"><span class="name">true</span></code> si 
 <div class="section" id="exemples-de-types-inductifs">
 <h2>Exemples de types inductifs</h2>
 <p>Type de données prédéfini dans Coq :</p>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2a" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2a"><span class="highlight"><span class="kn">Print</span> bool.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">bool</span> : <span class="kt">Set</span> :=  true : bool | false : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk29" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk29"><span class="highlight"><span class="kn">Print</span> bool.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">bool</span> : <span class="kt">Set</span> :=  true : bool | false : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">entier_nat</span> := Zero | Succ (p : entier_nat).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">liste</span> <span class="nv">T</span> := Vide | Cons (x : T) (l : liste T).</span></span></span></pre><p>Eléments d’un type inductif :</p>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2b" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2b"><span class="highlight"><span class="kn">Check</span> true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2a" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2a"><span class="highlight"><span class="kn">Check</span> true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
      : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2c" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2c"><span class="highlight"><span class="kn">Check</span> (Succ (Succ Zero)).</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">Succ (Succ Zero)
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2b" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2b"><span class="highlight"><span class="kn">Check</span> (Succ (Succ Zero)).</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">Succ (Succ Zero)
      : entier_nat</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">liste1</span> := @Cons entier_nat (Succ Zero) (Vide entier_nat).</span></span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2d"><span class="highlight"><span class="kn">Print</span> liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">liste1 = 
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2c" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2c"><span class="highlight"><span class="kn">Print</span> liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">liste1 = 
 Cons (Succ Zero) (Vide entier_nat)
      : liste entier_nat</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre></div>
@@ -816,7 +809,7 @@ Cons (Succ Zero) (Vide entier_nat)
   | @Cons _ x r =&gt; Succ (@long_v2 T r)
   <span class="kr">end</span>.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk2e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2e"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> long_v2 liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= Succ Zero
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk2d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2d"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> long_v2 liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= Succ Zero
 : entier_nat</span></blockquote></div></div></small></span></pre></div>
 <div class="section" id="schemas-inductifs">
 <h2>Schémas inductifs</h2>
@@ -878,11 +871,11 @@ l'itérateur le plus général sur le type <code class="highlight coq"><span cla
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Import</span> ListNotations.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
 
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2f" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2f"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2e"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
      : <span class="kt">Type</span> -&gt; <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk30" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk30"><span class="highlight"><span class="kn">Print</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2f" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2f"><span class="highlight"><span class="kn">Print</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
     nil : list A | cons : A -&gt; list A -&gt; list A
 
 <span class="kn">Arguments</span> list _%type_scope
@@ -955,7 +948,7 @@ entier une preuve</td>
 <td>quantification
 universelle</td>
 </tr>
-<tr><td><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">x</span><span class="operator">:</span><span class="name">X</span><span class="operator">,</span> <span class="name">P</span> <span class="name">x</span></code></td>
+<tr><td><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">x</span> <span class="operator">:</span> <span class="name">X</span><span class="operator">,</span> <span class="name">P</span> <span class="name">x</span></code></td>
 <td>fonction dont le type
 d'arrivée dépend de l'argument</td>
 <td>∀x∈X, P x</td>
@@ -969,7 +962,7 @@ d'arrivée dépend de l'argument</td>
 cependant être inféré :)</div>
 </div>
 <blockquote>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk31" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk31"><span class="highlight"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk30" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk30"><span class="highlight"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
      : <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre></blockquote>
 </div>
@@ -979,8 +972,8 @@ cependant être inféré :)</div>
 <div class="section" id="la-conjonction">
 <h3>La Conjonction</h3>
 <pre class="code Coq literal-block">
-<span class="keyword namespace">Inductive</span> <span class="name function">and</span> <span class="operator">(</span><span class="name variable">P</span> <span class="name variable">Q</span><span class="operator">:</span> <span class="keyword type">Prop</span><span class="operator">):</span> <span class="keyword type">Prop</span> <span class="operator">:=</span>
-  <span class="name">Conj</span> <span class="operator">(</span><span class="name">p</span><span class="operator">:</span> <span class="name">P</span><span class="operator">)</span> <span class="operator">(</span><span class="name">q</span><span class="operator">:</span> <span class="name">Q</span><span class="operator">).</span>
+<span class="keyword namespace">Inductive</span> <span class="name function">and</span> <span class="operator">(</span><span class="name variable">P</span> <span class="name variable">Q</span> <span class="operator">:</span> <span class="keyword type">Prop</span><span class="operator">)</span> <span class="operator">:</span> <span class="keyword type">Prop</span> <span class="operator">:=</span>
+  <span class="name">Conj</span> <span class="operator">(</span><span class="name">p</span> <span class="operator">:</span> <span class="name">P</span><span class="operator">)</span> <span class="operator">(</span><span class="name">q</span> <span class="operator">:</span> <span class="name">Q</span><span class="operator">).</span>
 
 <span class="operator">--&gt;</span>
 

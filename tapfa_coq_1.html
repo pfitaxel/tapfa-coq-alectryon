@@ -29,6 +29,10 @@
 </tbody>
 </table>
 <input type="checkbox" class="alectryon-toggle" id="alectryon-toggle-0" /><label for="alectryon-toggle-0" class="alectryon-toggle-label">Display all goals and responses</label><div class="alectryon-container docutils container">
+<p>Supports de ce cours :</p>
+<ul class="simple">
+<li><a class="reference external" href="https://pfitaxel.github.io/tapfa-coq-alectryon/">https://pfitaxel.github.io/tapfa-coq-alectryon/</a></li>
+</ul>
 <div class="section" id="id1">
 <h1>Aperçu des fonctionnalités de Coq</h1>
 <div class="section" id="presentation-du-logiciel-coq">
@@ -66,13 +70,19 @@ de Feit–Thompson (la preuve papier fait <span class="formula"> &gt; 300</s
 <div class="line"><a class="reference external" href="https://github.com/ligurio/practical-fm">https://github.com/ligurio/practical-fm</a>)</div>
 </div>
 </li>
+<li><p class="first"><a class="reference external" href="https://github.com/mit-plv/fiat-crypto">FiatCrypto</a> :
+&quot;Simple High-Level Code For Cryptographic Arithmetic: With
+Proofs, Without Compromises&quot; (<em>Implementations from our library
+were included in BoringSSL to replace existing specialized code,
+for inclusion in several large deployments for Chrome, Android,
+and CloudFlare.</em>)</p>
+</li>
 </ul>
 </li>
 <li><p class="first">Ouvrage (publié chez Springer et téléchargeable en français) :</p>
 <p><a class="reference external" href="http://www.labri.fr/perso/casteran/CoqArt/coqartF.pdf">Coq'Art: Interactive Theorem Proving and Program Development</a></p>
 </li>
 </ul>
-<p>TODO Fiat-Crypto</p>
 </div>
 <div class="section" id="caracteristiques-interessantes-de-coq">
 <h2>Caractéristiques intéressantes de Coq</h2>
@@ -112,9 +122,10 @@ fixée, des fonctions à arité variable, etc.)</li>
 <div class="section" id="environnement-recommande">
 <h3>Environnement recommandé</h3>
 <ul class="simple">
-<li>Coq 8.12 + Emacs + ProofGeneral + Company-Coq [cf. tutoriel ci-dessous]</li>
+<li>Coq 8.12 + Emacs + ProofGeneral + Company-Coq
+[cf. <a class="reference external" href="https://github.com/erikmd/tapfa-init.el">tutoriel</a>]</li>
 <li>Carte de référence / raccourcis clavier [cf. Moodle]</li>
-<li>Dictionnaire OCaml/Coq [cf. Moodle]</li>
+<li>Dictionnaire OCaml/Coq [cf. Moodle ; autorisé à l'examen a priori]</li>
 </ul>
 </div>
 <div class="section" id="tutoriel-dinstallation">
@@ -123,8 +134,9 @@ fixée, des fonctions à arité variable, etc.)</li>
 <li><p class="first">avec OPAM, sous GNU/Linux, macOS ou Windows 10 :</p>
 <p><a class="reference external" href="https://github.com/erikmd/tapfa-init.el">https://github.com/erikmd/tapfa-init.el</a></p>
 </li>
-<li><p class="first"><em>n’hésitez pas à poser des questions sur Moodle/Discord ;
-on vous demandera un feedback au dernier TP.</em></p>
+<li><p class="first">à installer avant le 1er TP TAPFA-Coq</p>
+</li>
+<li><p class="first">n’hésitez pas à poser des questions sur Moodle/Discord</p>
 </li>
 </ul>
 </div>
@@ -155,9 +167,7 @@ on vous demandera un feedback au dernier TP.</em></p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">Mod3</span> := {x : nat | x &lt; <span class="mi">3</span>}.</span></span></span></pre><ul class="simple">
 <li>Synthèse de fonctions à partir d’une preuve de sa spécification :</li>
 </ul>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* TODO Replace with list example *)</span>
-
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk4"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pred</span> :
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk4"><span class="highlight"><span class="kn">Definition</span> <span class="nf">pred</span> :
   <span class="kr">forall</span> <span class="nv">n</span> : nat, <span class="c">(* précond *)</span> n &gt; <span class="mi">0</span> -&gt;
     {m : nat | <span class="c">(* postcond *)</span> S m = n}.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk5"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &gt; <span class="mi">0</span> -&gt; {m : nat | S m = n}</span></div></blockquote></div></div></small><span class="alectryon-wsp">
@@ -238,16 +248,18 @@ exprimées dans le cahier des charges !)</p>
 <div class="section" id="types-et-expressions">
 <h2>Types et expressions</h2>
 <div class="line-block">
-<div class="line">À retenir En Coq, tout terme bien formé a un type (y compris les types !)</div>
+<div class="line">À retenir :</div>
+<div class="line">En Coq, tout terme bien formé a un type (y compris les types !)</div>
 <div class="line">donc contrairement à OCaml, les termes/expressions et les types ne
 forment pas deux &quot;collections disjointes&quot;</div>
 </div>
+</div>
 <div class="section" id="exemples-dexpressions-coq-et-leur-type">
-<h3>Exemples d’expressions Coq et leur type</h3>
+<h2>Exemples d’expressions Coq et leur type</h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="31%" />
-<col width="22%" />
+<col width="24%" />
 <col width="24%" />
 <col width="22%" />
 </colgroup>
@@ -259,41 +271,93 @@ forment pas deux &quot;collections disjointes&quot;</div>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>0</td>
-<td>nat</td>
+<tr><td><code class="highlight coq"><span class="literal number integer">0</span></code></td>
+<td><code class="highlight coq"><span class="name">nat</span></code></td>
 <td>Set</td>
 <td>…</td>
 </tr>
-<tr><td>true</td>
-<td>bool</td>
+<tr><td><code class="highlight coq"><span class="name">true</span></code></td>
+<td><code class="highlight coq"><span class="name">bool</span></code></td>
 <td>Set</td>
 <td>…</td>
 </tr>
-<tr><td>fun x =&gt; x + 1</td>
-<td>nat -&gt; nat</td>
+<tr><td><code class="highlight coq"><span class="keyword reserved">fun</span> <span class="name variable">x</span> <span class="operator">=&gt;</span> <span class="name">x</span> <span class="operator">+</span> <span class="literal number integer">1</span></code></td>
+<td><code class="highlight coq"><span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">nat</span></code></td>
 <td>Set</td>
 <td>…</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="exemples-en-coq">
-<h2>Exemples en Coq</h2>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* TODO unfold *)</span>
-
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkb"><span class="highlight"><span class="kn">Check</span> <span class="mi">0</span>. <span class="c">(* 0 : nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">0</span>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkb"><span class="highlight"><span class="kn">Check</span> <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">0</span>
      : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkc"><span class="highlight"><span class="kn">Check</span> true. <span class="c">(* true : bool *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkc"><span class="highlight"><span class="kn">Check</span> true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
      : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkd"><span class="highlight"><span class="kn">Check</span> <span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>. <span class="c">(* fun x =&gt; x + 1 : nat -&gt; nat *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">fun</span> <span class="nv">x</span> : nat =&gt; x + <span class="mi">1</span>
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkd"><span class="highlight"><span class="kn">Check</span> <span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">fun</span> <span class="nv">x</span> : nat =&gt; x + <span class="mi">1</span>
      : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chke"><span class="highlight"><span class="kn">Check</span> nat. <span class="c">(* nat : Set *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">nat
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chke"><span class="highlight"><span class="kn">Check</span> nat.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">nat
      : <span class="kt">Set</span></span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkf"><span class="highlight"><span class="kn">Check</span> <span class="kt">Set</span>. <span class="c">(* Set : Type *)</span></span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kt">Set</span>
-     : <span class="kt">Type</span></span></blockquote></div></div></small></span></pre><div class="section" id="exemples-avances-dexpressions-coq-et-leur-type">
-<h3>Exemples avancés d’expressions Coq et leur type.</h3>
-<p>Remarque :</p>
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chkf"><span class="highlight"><span class="kn">Check</span> <span class="kt">Set</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kt">Set</span>
+     : <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></div>
+<div class="section" id="exemples-avances-dexpressions-coq-et-leur-type">
+<h2>Exemples avancés d’expressions Coq et leur type</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="26%" />
+<col width="20%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">valeur/programme</th>
+<th class="head">type</th>
+<th class="head">type de type</th>
+<th class="head">…</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><code class="highlight coq"><span class="name">list</span></code></td>
+<td><code class="highlight coq"><span class="keyword type">Type</span> <span class="operator">-&gt;</span> <span class="keyword type">Type</span></code></td>
+<td><code class="highlight coq"><span class="keyword type">Type</span></code></td>
+<td>…</td>
+</tr>
+<tr><td>&quot;preuve de <code class="highlight coq"><span class="literal number integer">2</span><span class="operator">&lt;=</span><span class="literal number integer">2</span></code>&quot;</td>
+<td><code class="highlight coq"><span class="literal number integer">2</span> <span class="operator">&lt;=</span> <span class="literal number integer">2</span></code></td>
+<td><code class="highlight coq"><span class="keyword type">Prop</span></code></td>
+<td>…</td>
+</tr>
+<tr><td>&quot;(1; preuve de <code class="highlight coq"><span class="literal number integer">1</span><span class="operator">&gt;</span><span class="literal number integer">0</span></code>)&quot;</td>
+<td><code class="highlight coq"><span class="operator">{</span><span class="name">x</span><span class="operator">:</span> <span class="name">nat</span> <span class="operator">|</span> <span class="name">x</span><span class="operator">&gt;</span><span class="literal number integer">0</span><span class="operator">}</span></code></td>
+<td><code class="highlight coq"><span class="keyword type">Set</span></code></td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk10"><span class="highlight"><span class="kn">Check</span> <span class="mi">2</span> &lt;= <span class="mi">2</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">2</span> &lt;= <span class="mi">2</span>
+     : <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk11" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk11"><span class="highlight"><span class="kn">Check</span> le <span class="mi">2</span> <span class="mi">2</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="mi">2</span> &lt;= <span class="mi">2</span>
+     : <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk12" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk12"><span class="highlight"><span class="kn">Check</span> le_n <span class="mi">2</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">le_n <span class="mi">2</span>
+     : <span class="mi">2</span> &lt;= <span class="mi">2</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk13" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk13"><span class="highlight"><span class="kn">Check</span> le_n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">le_n
+     : <span class="kr">forall</span> <span class="nv">n</span> : nat, n &lt;= n</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk14" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk14"><span class="highlight"><span class="kn">Check</span> le.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">le
+     : nat -&gt; nat -&gt; <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+<span class="c">(* Prop est le type des formules logiques *)</span>
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk15" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk15"><span class="highlight"><span class="kn">Check</span> <span class="kt">Prop</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kt">Prop</span>
+     : <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></div>
+<div class="section" id="remarques">
+<h2>Remarques</h2>
 <ul class="simple">
 <li><code class="highlight coq"><span class="keyword type">Prop</span></code> est le type des formules logiques ;</li>
 <li>à ne pas confondre avec <code class="highlight coq"><span class="name">bool</span></code>, le type des booléens.</li>
@@ -307,40 +371,676 @@ on peut déterminer leur résultat par un <em>calcul</em> ;</li>
 (définis par une formule) :
 on peut prouver leur véracité par un <em>raisonnement</em>.</li>
 </ul>
+</div>
+<div class="section" id="le-type-des-listes-comparaison-ocaml-coq">
+<h2>Le type des listes : comparaison OCaml / Coq</h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="31%" />
-<col width="26%" />
-<col width="23%" />
-<col width="21%" />
+<col width="45%" />
+<col width="55%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">valeur/programme</th>
-<th class="head">type</th>
-<th class="head">type de type</th>
-<th class="head">…</th>
+<tr><th class="head">OCaml</th>
+<th class="head">Coq</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>list</td>
-<td>Type -&gt; Type</td>
-<td>Type</td>
-<td>…</td>
+<tr><td><code class="highlight coq"><span class="operator">'</span><span class="name">a</span> <span class="name">list</span></code></td>
+<td><code class="highlight coq"><span class="name">list</span> <span class="name">a</span></code></td>
 </tr>
-<tr><td>&quot;preuve de <code class="highlight coq"><span class="literal number integer">1</span><span class="operator">&lt;</span><span class="literal number integer">2</span></code>&quot;</td>
-<td>1 &lt; 2</td>
-<td>Prop</td>
-<td>…</td>
+<tr><td><code class="highlight coq"><span class="name">bool</span> <span class="name">list</span></code></td>
+<td><code class="highlight coq"><span class="name">list</span> <span class="name">bool</span></code></td>
 </tr>
-<tr><td>&quot;(1,
-preuve de <code class="highlight coq"><span class="literal number integer">1</span><span class="operator">&gt;</span><span class="literal number integer">0</span></code>)&quot;</td>
-<td>{x: nat | x&gt;0}</td>
-<td>Set</td>
-<td>…</td>
+<tr><td>notation spéciale, mais familière</td>
+<td><code class="highlight coq"><span class="name">list</span></code> est une fonction : <code class="highlight coq"><span class="keyword type">Type</span> <span class="operator">-&gt;</span> <span class="keyword type">Type</span></code></td>
+</tr>
+</tbody>
+</table>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk16" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk16"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
+     : <span class="kt">Type</span> -&gt; <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></div>
+<div class="section" id="elements-de-syntaxe">
+<h2>Éléments de syntaxe</h2>
+<ul>
+<li><p class="first">Les mots &quot;terme&quot; et &quot;expression&quot; sont synonymes.</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Rappel :</div>
+<div class="line">En Coq, tout terme bien formé a un type (y compris les types !) ;</div>
+<div class="line">contrairement à OCaml, les termes/expressions et les types ne
+forment pas deux &quot;collections disjointes&quot; ;</div>
+<div class="line">donc la grammaire des termes ci-dessous contient aussi Type, Set, Prop :</div>
+</div>
+</li>
+</ul>
+<pre class="code Coq literal-block">
+<span class="name">terme</span> <span class="operator">::=</span> <span class="keyword type">Type</span> <span class="operator">|</span> <span class="keyword type">Set</span> <span class="operator">|</span> <span class="keyword type">Prop</span>           <span class="literal string double">&quot;sortes&quot;</span> <span class="operator">(=</span> <span class="name">types</span> <span class="name">de</span> <span class="name">type</span><span class="operator">)</span>
+        <span class="operator">|</span> <span class="name">var</span>                         <span class="literal string double">&quot;variable&quot;</span>
+        <span class="operator">|</span> <span class="operator">(</span> <span class="name">terme</span> <span class="operator">)</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="name">terme</span>                 <span class="literal string double">&quot;application&quot;</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="name">op</span> <span class="name">terme</span>              <span class="literal string double">&quot;opérateur infixe&quot;</span>
+        <span class="operator">|</span> <span class="keyword reserved">fun</span> <span class="name variable">var</span> <span class="operator">:</span> <span class="name">terme</span> <span class="operator">⇒</span> <span class="name">terme</span>     <span class="literal string double">&quot;abstraction&quot;</span>
+        <span class="operator">|</span> <span class="keyword reserved">let</span> <span class="name variable">var</span> <span class="operator">:=</span> <span class="name">terme</span> <span class="keyword reserved">in</span> <span class="name">terme</span>   <span class="literal string double">&quot;définition locale&quot;</span>
+        <span class="operator">|</span> <span class="keyword reserved">if</span> <span class="name">terme</span> <span class="keyword reserved">then</span> <span class="name">terme</span> <span class="keyword reserved">else</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="operator">-&gt;</span> <span class="name">terme</span>              <span class="literal string double">&quot;type flèche&quot;</span> <span class="operator">(=</span> <span class="name">type</span> <span class="name">des</span> <span class="name">fonctions</span><span class="operator">)</span>
+</pre>
+</div>
+<div class="section" id="exemples">
+<h2>Exemples</h2>
+<p>Que renvoient les commandes suivantes ?</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk17" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk17"><span class="highlight"><span class="kn">Check</span> <span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">fun</span> <span class="nv">x</span> : nat =&gt; x + <span class="mi">1</span>
+     : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk18" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk18"><span class="highlight"><span class="kn">Check</span> (<span class="kr">fun</span> <span class="nv">f</span> <span class="nv">x</span> =&gt; f (f x)) (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>).</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">(<span class="kr">fun</span> (<span class="nv">f</span> : nat -&gt; nat) (<span class="nv">x</span> : nat) =&gt; f (f x))
+  (<span class="kr">fun</span> <span class="nv">x</span> : nat =&gt; x + <span class="mi">1</span>)
+     : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk19" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk19"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> (<span class="kr">fun</span> <span class="nv">f</span> <span class="nv">x</span> =&gt; f (f x)) (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>) <span class="mi">3</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">5</span>
+: nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">f1</span> := <span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>.</span></span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk1a" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1a"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> f <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">2</span>
+: nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">double</span> <span class="nv">f</span> := <span class="kr">fun</span> (<span class="nv">x</span> : nat) =&gt; f (f x).</span></span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk1b" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1b"><span class="highlight"><span class="kn">Check</span> double.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">double
+     : (nat -&gt; nat) -&gt; nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">double2</span> (<span class="nv">f</span> : nat -&gt; nat) := <span class="kr">fun</span> <span class="nv">x</span> =&gt; f (f x).</span></span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk1c" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1c"><span class="highlight"><span class="kn">Check</span> double2.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">double2
+     : (nat -&gt; nat) -&gt; nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk1d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1d"><span class="highlight"><span class="kn">Fail</span> <span class="kn">Definition</span> <span class="nf">double3</span> <span class="nv">f</span> := <span class="kr">fun</span> <span class="nv">x</span> =&gt; f (f x).</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">The command has indeed failed <span class="kr">with</span> message:
+The following term contains unresolved implicit arguments:
+  (<span class="kr">fun</span> (<span class="nv">f</span> : <span class="nl">?T</span> -&gt; <span class="nl">?T</span>) (<span class="nv">x</span> : <span class="nl">?T</span>) =&gt; f (f x))
+More precisely: 
+- <span class="nl">?T</span>: Cannot infer <span class="nl">?T</span> <span class="kr">in</span> the partial instance
+  <span class="s2">&quot;?T -&gt; ?T&quot;</span> found <span class="kr">for</span> the <span class="kp">type of</span> f.</span></blockquote></div></div></small></span></pre><p>Cette dernière définition est refusée car en Coq, les <em>paramètres de
+généricité</em> sont explicites. Pas de synthèse automatique de leur nom ;
+il faut expliciter ces arguments.</p>
+</div>
+<div class="section" id="genericite">
+<h2>Généricité</h2>
+<p>Une fonction générique prend un type en paramètre.</p>
+<p>Exemple de définition d'une fonction générique : la fonction identité.</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) =&gt; <span class="kr">fun</span> (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v2</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v3</span> (<span class="nv">T</span>:<span class="kt">Type</span>) := <span class="kr">fun</span> (<span class="nv">x</span>:T) =&gt; x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v4</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) := x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v5</span> <span class="nv">T</span> (<span class="nv">x</span>:T) := x.</span></span></span></pre><p><span class="formula">⇝</span> ces fonctions ont toutes 2 arguments !</p>
+<p>Utilisation d’une fonction générique</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk1e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1e"><span class="highlight"><span class="kn">Check</span> id nat.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id nat
+     : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk1f" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1f"><span class="highlight"><span class="kn">Check</span> id nat <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id nat <span class="mi">0</span>
+     : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk20" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk20"><span class="highlight"><span class="kn">Check</span> id bool.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id bool
+     : bool -&gt; bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk21" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk21"><span class="highlight"><span class="kn">Check</span> id bool true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id bool true
+     : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk22" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk22"><span class="highlight"><span class="kn">Print</span> id.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id = 
+<span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) =&gt; x
+     : <span class="kr">forall</span> <span class="nv">T</span> : <span class="kt">Type</span>, T -&gt; T
+
+<span class="kn">Arguments</span> id _%type_scope</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></div>
+<div class="section" id="genericite-et-typage">
+<h2>Généricité et typage</h2>
+<p>Type d’une fonction générique</p>
+<ul class="simple">
+<li>En OCaml : <tt class="docutils literal">id: 'a <span class="pre">-&gt;</span> 'a</tt> <span class="formula">⇝</span> pour tout type <tt class="docutils literal">'a</tt>,
+id prend un argument de type <tt class="docutils literal">'a</tt> et retourne un résultat de
+type <tt class="docutils literal">'a</tt></li>
+<li>En Coq : <code class="highlight coq"><span class="name">id</span><span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">a</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span></code> <span class="formula">⇝</span> la quantification
+est explicite</li>
+<li>extension du langage des termes :</li>
+</ul>
+<pre class="code Coq literal-block">
+<span class="name">terme</span> <span class="operator">::=</span> <span class="keyword type">Type</span> <span class="operator">|</span> <span class="keyword type">Set</span> <span class="operator">|</span> <span class="keyword type">Prop</span>
+        <span class="operator">|</span> <span class="name">var</span>
+        <span class="operator">|</span> <span class="operator">(</span> <span class="name">terme</span> <span class="operator">)</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="name">op</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="keyword reserved">fun</span> <span class="name variable">var</span> <span class="operator">:</span> <span class="name">terme</span> <span class="operator">⇒</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="keyword reserved">let</span> <span class="name variable">var</span> <span class="operator">:=</span> <span class="name">terme</span> <span class="keyword reserved">in</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="keyword reserved">if</span> <span class="name">terme</span> <span class="keyword reserved">then</span> <span class="name">terme</span> <span class="keyword reserved">else</span> <span class="name">terme</span>
+        <span class="operator">|</span> <span class="name">terme</span> <span class="operator">-&gt;</span> <span class="name">terme</span>             <span class="operator">(</span><span class="name">type</span> <span class="name">d'une</span> <span class="name">fonction</span><span class="operator">)</span>
+        <span class="operator">|</span> <span class="keyword reserved">forall</span> <span class="name variable">var</span> <span class="operator">:</span> <span class="name">terme</span><span class="operator">,</span> <span class="name">terme</span>  <span class="operator">(</span><span class="name">type</span> <span class="name">d'une</span> <span class="name">fonction</span> <span class="name">générique</span><span class="operator">)</span>
+</pre>
+<ul>
+<li><div class="first line-block">
+<div class="line">Comme on le verra par la suite, <code class="highlight coq"><span class="name">t1</span> <span class="operator">-&gt;</span> <span class="name">t2</span></code> est en fait</div>
+<div class="line">une syntaxe alternative (plus intuitive) de &quot;<code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">_</span> <span class="operator">:</span> <span class="name">t1</span><span class="operator">,</span> <span class="name">t2</span></code>&quot;.</div>
+</div>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk23" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk23"><span class="highlight"><span class="kn">Check</span> id.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id
+     : <span class="kr">forall</span> <span class="nv">T</span> : <span class="kt">Type</span>, T -&gt; T</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></li>
+</ul>
+</div>
+<div class="section" id="genericite-et-arguments-implicites-i">
+<h2>Généricité et arguments implicites I</h2>
+<p>Les remarques qui suivent ne sont pas &quot;exigibles à l'examen&quot; mais
+permettront d'avoir plus de confort, notamment en TP, en évitant de
+devoir expliciter tous les paramètres de généricité lors de l'appel
+d'une fonction polymorphe.</p>
+<p>Redéfinissons la fonction id après activation des arguments implicites</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Set Implicit Arguments</span>. <span class="c">(* au début du fichier en principe *)</span></span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id&#39;</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) := x.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk24" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk24"><span class="highlight"><span class="kn">Print</span> id&#39;.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; = 
+<span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) =&gt; x
+     : <span class="kr">forall</span> <span class="nv">T</span> : <span class="kt">Type</span>, T -&gt; T
+
+<span class="kn">Arguments</span> id&#39; [T]%type_scope</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+<span class="c">(* même code que *)</span>
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk25" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk25"><span class="highlight"><span class="kn">Print</span> id.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id = 
+<span class="kr">fun</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) =&gt; x
+     : <span class="kr">forall</span> <span class="nv">T</span> : <span class="kt">Type</span>, T -&gt; T
+
+<span class="kn">Arguments</span> id _%type_scope</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+<span class="c">(* mais *)</span>
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk26" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk26"><span class="highlight"><span class="kn">About</span> id&#39;.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; : <span class="kr">forall</span> [T : <span class="kt">Type</span>], T -&gt; T
+
+id&#39; <span class="kr">is</span> not universe polymorphic
+<span class="kn">Arguments</span> id&#39; [T]%type_scope
+id&#39; <span class="kr">is</span> transparent
+Expands to: Constant SerTop.id&#39;</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* id&#39; : forall [T : Type], T -&gt; T *)</span></span></span></pre><p>l'argument T est implicite : il peut être inféré à partir de l'argument d'après.</p>
+<p>D'où une syntaxe concise à la OCaml :</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk27" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk27"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; <span class="mi">0</span>
+     : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Set Printing All</span>. <span class="c">(* affiche tout, dont les arguments implicites *)</span></span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk28" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk28"><span class="highlight"><span class="kn">Check</span> id&#39; <span class="mi">0</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">@id&#39; nat O
+     : nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Unset Printing All</span>.</span></span></span></pre></div>
+<div class="section" id="genericite-et-arguments-implicites-ii">
+<h2>Généricité et arguments implicites II</h2>
+<p>En OCaml :</p>
+<p><tt class="docutils literal">let id x = x;;</tt></p>
+<p><tt class="docutils literal">id 0;; (* : int = 0 *)</tt></p>
+<p><tt class="docutils literal">id true;; (* : bool = true *)</tt></p>
+<p>En Coq :</p>
+<p><code class="highlight coq"><span class="keyword namespace">Set Implicit Arguments</span><span class="operator">.</span></code></p>
+<p><code class="highlight coq"><span class="keyword namespace">Definition</span> <span class="name function">id</span> <span class="name variable">T</span> <span class="operator">(</span><span class="name variable">x</span><span class="operator">:</span><span class="name">T</span><span class="operator">)</span> <span class="operator">:=</span> <span class="name">x</span><span class="operator">.</span></code></p>
+<p><code class="highlight coq"><span class="keyword namespace">Check</span> <span class="name">id</span> <span class="literal number integer">0</span><span class="operator">.</span> <span class="comment">(* id 0 : nat *)</span></code></p>
+<p><code class="highlight coq"><span class="keyword namespace">Check</span> <span class="name">id</span> <span class="name">true</span><span class="operator">.</span> <span class="comment">(* id true : bool *)</span></code></p>
+</div>
+<div class="section" id="parametres-de-genericite-un-plus-gros-exemple">
+<h2>Paramètres de généricité : un plus gros exemple</h2>
+<p>En OCaml :</p>
+<p><tt class="docutils literal">let comp f g x = g (f <span class="pre">x);;</span></tt></p>
+<p><tt class="docutils literal">val comp : (’a <span class="pre">-&gt;</span> ’b) <span class="pre">-&gt;</span> (’b <span class="pre">-&gt;</span> ’c) <span class="pre">-&gt;</span> ’a <span class="pre">-&gt;</span> ’c = &lt;fun&gt;</tt></p>
+<p><tt class="docutils literal">comp (fun x <span class="pre">-&gt;</span> x + 1) (fun x <span class="pre">-&gt;</span> x * 2) 3;;</tt></p>
+<p><span class="formula">⇝</span> ?</p>
+<p>En Coq :</p>
+<p>Pas de synthèse du nom des paramètres de généricité : il faut
+déclarer ces paramètres de généricité lors de la définition.</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
+
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span>:T1): T3 := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v2</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span>:T1) := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v3</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) (<span class="nv">g</span>:T2-&gt;T3) <span class="nv">x</span> := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v4</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> <span class="nv">f</span> (<span class="nv">g</span>:T2-&gt;T3) (<span class="nv">x</span>:T1) := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">comp_v5</span> <span class="nv">T1</span> <span class="nv">T2</span> <span class="nv">T3</span> (<span class="nv">f</span>:T1-&gt;T2) <span class="nv">g</span> (<span class="nv">x</span>:T1) : T3 := g (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk29" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk29"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> comp (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x + <span class="mi">1</span>) (<span class="kr">fun</span> <span class="nv">x</span> =&gt; x * <span class="mi">2</span>) <span class="mi">3</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= <span class="mi">8</span>
+: nat</span></blockquote></div></div></small></span></pre></div>
+<div class="section" id="exercices">
+<h2>Exercices</h2>
+<ol class="arabic simple">
+<li>Ecrire la fonction <tt class="docutils literal">mult2</tt> retournant le double de son argument.</li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">mult2</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic" start="2">
+<li><div class="first line-block">
+<div class="line"><strong>Supposons défini</strong> le prédicat <code class="highlight coq"><span class="name">leq</span><span class="operator">:</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">nat</span> <span class="operator">-&gt;</span> <span class="name">bool</span></code>,
+retournant <code class="highlight coq"><span class="name">true</span></code> si son 1er argument est inférieur à son second.</div>
+<div class="line">Définir la fonction <tt class="docutils literal">max</tt> retournant le plus grand de ses 2 arguments.</div>
+<div class="line">En déduire la fonction <tt class="docutils literal">max3</tt> retournant le plus grand de ses 3 arguments.</div>
+<div class="line">Ecrire une variante <tt class="docutils literal">max3'</tt> où la définition de <tt class="docutils literal">max</tt> est locale.</div>
+</div>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Parameter</span> <span class="nv">leq</span> : nat -&gt; nat -&gt; bool.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">max</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">max3</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">max3&#39;</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre></li>
+<li><p class="first">Quel est le type de l'expression suivante ?</p>
+</li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr3</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">f</span>:T -&gt; T) <span class="nv">x</span> =&gt; f (f x).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* *)</span></span></span></pre><ol class="arabic simple" start="4">
+<li>Quel est le type de l'expression suivante ? (donner 2 syntaxes équivalentes)</li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr4</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) =&gt; T -&gt; T.</span></span></span></pre><ol class="arabic simple" start="5">
+<li>Quel est le type de l'expression suivante ?</li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr5</span> := <span class="kr">fun</span> (<span class="nv">T</span>:<span class="kt">Type</span>) (<span class="nv">x</span>:T) =&gt; x=x.</span></span></span></pre><ol class="arabic simple" start="6">
+<li>Écrire une fonction de type <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span> <span class="operator">-&gt;</span> <span class="name">a</span></code></li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr6</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic simple" start="7">
+<li>Écrire une fonction de type <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="name">b</span></code></li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr7</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><p>8. Écrire une fonction de type
+<code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="name variable">c</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span> <span class="operator">-&gt;</span> <span class="name">c</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">c</span></code></p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr8</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic simple" start="9">
+<li>Écrire une fonction de type <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="name variable">c</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">c</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span> <span class="operator">-&gt;</span> <span class="name">c</span><span class="operator">)</span></code></li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr9</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><p>10. Écrire une fonction de type
+<code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="name variable">c</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span> <span class="operator">-&gt;</span> <span class="name">c</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="name">b</span> <span class="operator">-&gt;</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">c</span></code></p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr10</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic simple" start="11">
+<li>Écrire une fonction de type <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="name variable">c</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="operator">(</span><span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span></code></li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">expr11</span> := <span class="c">(* todo *)</span><span class="mi">0</span>.</span></span></span></pre><ol class="arabic simple" start="12">
+<li>Peut-on écrire une fonction de type <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">a</span> <span class="name variable">b</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">b</span></code> ?</li>
+</ol>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-wsp"><span class="highlight"><span class="c">(* En OCaml :</span>
+
+<span class="c">   let exemple =</span>
+
+<span class="c"> *)</span>
+
+<span class="c">(* En Coq ? *)</span></span></span></pre></div>
+<div class="section" id="retour-sur-et-forall">
+<h2>Retour sur <code class="highlight coq"><span class="operator">-&gt;</span></code> et <code class="highlight coq"><span class="keyword reserved">forall</span></code></h2>
+<p><code class="highlight coq"><span class="name">T1</span> <span class="operator">-&gt;</span> <span class="name">T2</span></code> correspond :</p>
+<ul class="simple">
+<li>au type des fonctions de <code class="highlight coq"><span class="name">T1</span></code> dans <code class="highlight coq"><span class="name">T2</span></code>, c’est-à-dire</li>
+<li>au type des fonctions qui associent à tout <code class="highlight coq"><span class="name">x</span><span class="operator">:</span><span class="name">T1</span></code> un élément de <code class="highlight coq"><span class="name">T2</span></code>,</li>
+<li>que l’on peut aussi écrire <code class="highlight coq"><span class="keyword reserved">forall</span> <span class="operator">(</span><span class="name variable">x</span> <span class="operator">:</span> <span class="name">T1</span><span class="operator">),</span> <span class="name">T2</span></code></li>
+</ul>
+<p><code class="highlight coq"><span class="keyword reserved">forall</span></code> est une notation :</p>
+<ul class="simple">
+<li>généralisant <code class="highlight coq"><span class="operator">-&gt;</span></code>,</li>
+<li>utile lorsque le type d’arrivée <code class="highlight coq"><span class="name">T2</span></code> dépend du terme fourni <code class="highlight coq"><span class="name">x</span></code>.</li>
+</ul>
+<div class="section" id="exemples-de-types-definissables-en-coq">
+<h3>Exemples de types définissables en Coq</h3>
+<ul class="simple">
+<li><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="operator">(</span><span class="name variable">T</span> <span class="operator">:</span> <span class="keyword type">Type</span><span class="operator">),</span> <span class="name">T</span> <span class="operator">-&gt;</span> <span class="name">T</span></code></li>
+<li><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="operator">(</span><span class="name variable">p</span> <span class="name variable">q</span> <span class="operator">:</span> <span class="name">nat</span><span class="operator">),</span> <span class="name">q</span> <span class="operator">&lt;&gt;</span> <span class="literal number integer">0</span> <span class="operator">-&gt;</span> <span class="name">nat</span></code></li>
+<li><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="operator">(</span><span class="name variable">b</span> <span class="operator">:</span> <span class="name">bool</span><span class="operator">),</span> <span class="keyword reserved">if</span> <span class="name">b</span> <span class="keyword reserved">then</span> <span class="name">nat</span> <span class="keyword reserved">else</span> <span class="name">bool</span> <span class="operator">*</span> <span class="name">bool</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="la-correspondance-de-curryhoward-double-lecture">
+<h2>La correspondance de Curry–Howard : double lecture</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="48%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Notation</th>
+<th class="head">Lecture fonctionnelle</th>
+<th class="head">Lecture logique</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><code class="highlight coq"><span class="name">x</span> <span class="operator">:</span> <span class="name">T</span></code></td>
+<td><code class="highlight coq"><span class="name">x</span></code> a pour type <code class="highlight coq"><span class="name">T</span></code></td>
+<td><code class="highlight coq"><span class="name">x</span></code> &quot;preuve&quot; de <code class="highlight coq"><span class="name">T</span></code></td>
+</tr>
+<tr><td><em>aucun</em> <code class="highlight coq"><span class="name">x</span><span class="operator">:</span><span class="name">T</span></code></td>
+<td>le type <code class="highlight coq"><span class="name">T</span></code> est vide</td>
+<td><code class="highlight coq"><span class="name">T</span></code> est insatisfiable</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="name">P</span> <span class="operator">-&gt;</span> <span class="name">Q</span></code></td>
+<td>type des fonctions de <code class="highlight coq"><span class="name">P</span></code> dans <code class="highlight coq"><span class="name">Q</span></code></td>
+<td>l'implication logique</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="name">f</span> <span class="operator">:</span> <span class="name">P</span> <span class="operator">-&gt;</span> <span class="name">Q</span></code></td>
+<td>f est une fonction de <code class="highlight coq"><span class="name">P</span></code> dans <code class="highlight coq"><span class="name">Q</span></code></td>
+<td>f preuve de <tt class="docutils literal">P =&gt; Q</tt></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td colspan="2">f transforme une &quot;preuve&quot; de <code class="highlight coq"><span class="name">P</span></code> en une &quot;preuve&quot; de <code class="highlight coq"><span class="name">Q</span></code></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="section" id="types-inductifs">
+<h2>Types inductifs</h2>
+<p>Définition d’un type inductif paramétré par <tt class="docutils literal"><span class="pre">a1,...,am</span></tt>.</p>
+<p>En OCaml :</p>
+<pre class="code OCaml literal-block">
+<span class="keyword">type</span> <span class="operator">(</span><span class="keyword">'</span><span class="name">a1</span><span class="operator">,</span> <span class="operator">...,</span> <span class="keyword">'</span><span class="name">am</span><span class="operator">)</span> <span class="name">t</span> <span class="operator">=</span>     <span class="comment">(* m paramètres de généricité *)</span>
+  <span class="operator">|</span> <span class="name class">C1</span> <span class="keyword">of</span> <span class="name">t1_1</span> <span class="operator">*</span> <span class="operator">...</span> <span class="operator">*</span> <span class="name">t1_n1</span> <span class="comment">(* constructeur C1 d'arité n1 *)</span>
+  <span class="operator">|</span> <span class="operator">...</span>
+  <span class="operator">|</span> <span class="name class">Ck</span> <span class="keyword">of</span> <span class="name">tk_1</span> <span class="operator">*</span> <span class="operator">...</span> <span class="operator">*</span> <span class="name">tk_nk</span> <span class="comment">(* kième constructeur *)</span>
+</pre>
+<p>En Coq :</p>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">t</span> <span class="name variable">a1</span> <span class="operator">...</span> <span class="name">am</span> <span class="operator">:=</span>
+  <span class="operator">|</span> <span class="name">C1</span> <span class="operator">(</span><span class="name">p1</span> <span class="operator">:</span> <span class="name">t1_1</span><span class="operator">)</span> <span class="operator">...</span> <span class="operator">(</span><span class="name">pn1</span> <span class="operator">:</span> <span class="name">t1_n1</span><span class="operator">)</span>
+  <span class="operator">|</span> <span class="operator">...</span>
+  <span class="operator">|</span> <span class="name">Ck</span> <span class="operator">(</span><span class="name">p1</span> <span class="operator">:</span> <span class="name">tk_1</span><span class="operator">)</span> <span class="operator">...</span> <span class="operator">(</span><span class="name">pnk</span> <span class="operator">:</span> <span class="name">tk_nk</span><span class="operator">).</span> <span class="comment">(* ne pas oublier le point *)</span>
+</pre>
+</div>
+<div class="section" id="analyse-par-cas">
+<h2>Analyse par cas</h2>
+<p>En OCaml :</p>
+<pre class="code OCaml literal-block">
+<span class="keyword">match</span> <span class="name">x</span> <span class="keyword">with</span>
+<span class="operator">|</span> <span class="name class">C1</span> <span class="operator">(</span><span class="name">x1</span><span class="operator">,</span> <span class="operator">...,</span> <span class="name">xn1</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="operator">...</span>
+<span class="operator">|</span> <span class="operator">...</span>
+<span class="operator">|</span> <span class="name class">Ck</span> <span class="operator">(</span><span class="name">x1</span><span class="operator">,</span> <span class="operator">...,</span> <span class="name">xnk</span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="operator">...</span>
+</pre>
+<p>En Coq :</p>
+<pre class="code Coq literal-block">
+<span class="keyword reserved">match</span> <span class="name">x</span> <span class="keyword reserved">with</span>
+<span class="operator">|</span> <span class="name">C1</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xn1</span> <span class="operator">=&gt;</span> <span class="operator">...</span>
+<span class="operator">|</span> <span class="operator">...</span>
+<span class="operator">|</span> <span class="name">Ck</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xnk</span> <span class="operator">=&gt;</span> <span class="operator">...</span>
+<span class="keyword reserved">end</span>
+</pre>
+<p>Différences :</p>
+<ul class="simple">
+<li>Les constructeurs sont typiquement &quot;curryfiées&quot; en Coq.</li>
+<li>Les <tt class="docutils literal"><span class="pre">-&gt;</span></tt> sont remplacées par <code class="highlight coq"><span class="operator">=&gt;</span></code></li>
+<li>Il y a un <tt class="docutils literal">end</tt> en plus (pratique)</li>
+<li>Sinon c'est la même syntaxe :-)</li>
+</ul>
+</div>
+<div class="section" id="exemples-de-types-inductifs">
+<h2>Exemples de types inductifs</h2>
+<p>Type de données prédéfini dans Coq :</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2a" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2a"><span class="highlight"><span class="kn">Print</span> bool.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">bool</span> : <span class="kt">Set</span> :=  true : bool | false : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">entier_nat</span> := Zero | Succ (p : entier_nat).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">liste</span> <span class="nv">T</span> := Vide | Cons (x : T) (l : liste T).</span></span></span></pre><p>Eléments d’un type inductif :</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2b" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2b"><span class="highlight"><span class="kn">Check</span> true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">true
+     : bool</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2c" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2c"><span class="highlight"><span class="kn">Check</span> (Succ (Succ Zero)).</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">Succ (Succ Zero)
+     : entier_nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">liste1</span> := @Cons entier_nat (Succ Zero) (Vide entier_nat).</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2d"><span class="highlight"><span class="kn">Print</span> liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">liste1 = 
+Cons (Succ Zero) (Vide entier_nat)
+     : liste entier_nat</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></div>
+<div class="section" id="fonctions-recursives">
+<h2>Fonctions récursives</h2>
+<div class="line-block">
+<div class="line"><strong>Obligation de terminaison :</strong></div>
+<div class="line">un des arguments doit être <em>structurellement décroissant</em></div>
+<div class="line">(appels récursifs sur un sous-terme de cet argument)</div>
+</div>
+<div class="line-block">
+<div class="line">Comme déjà dit en introduction :</div>
+<div class="line">il est impossible de définir en Coq une fonction récursive qui ne termine pas.</div>
+</div>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Fixpoint</span> <span class="nf">add</span> <span class="nv">n</span> <span class="nv">m</span> :=
+  <span class="kr">match</span> n <span class="kr">with</span>
+  | Zero =&gt; m
+  | Succ p =&gt; Succ (add p m)
+  <span class="kr">end</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Fixpoint</span> <span class="nf">long</span> <span class="nv">T</span> (<span class="nv">l</span> : liste T) :=
+  <span class="kr">match</span> l <span class="kr">with</span>
+  | Vide _ =&gt; Zero
+  | Cons x r =&gt; Succ (long r)
+  <span class="kr">end</span>.</span></span></span></pre><p>Est-ce normal d'écrire <code class="highlight coq"><span class="name">Cons</span> <span class="name">x</span> <span class="name">r</span> <span class="operator">=&gt;</span> <span class="name">Succ</span> <span class="operator">(</span><span class="name">long</span> <span class="name">r</span><span class="operator">)</span></code> ?</p>
+<p>Précisons :</p>
+<ul class="simple">
+<li>Le constructeur <code class="highlight coq"><span class="name">Cons</span></code> a trois arguments,</li>
+<li>La fonction <code class="highlight coq"><span class="name">long</span></code> a 2 arguments...</li>
+<li>Mais on avait activé les arguments implicites : <code class="highlight coq"><span class="keyword namespace">Set Implicit Arguments</span></code>.</li>
+<li>On pourrait néanmoins écrire en étant pleinement explicite :</li>
+</ul>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Fixpoint</span> <span class="nf">long_v2</span> <span class="nv">T</span> (<span class="nv">l</span> : liste T) :=
+  <span class="kr">match</span> l <span class="kr">with</span>
+  | Vide _ =&gt; Zero
+  | @Cons _ x r =&gt; Succ (@long_v2 T r)
+  <span class="kr">end</span>.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk2e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2e"><span class="highlight"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> long_v2 liste1.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">= Succ Zero
+: entier_nat</span></blockquote></div></div></small></span></pre></div>
+<div class="section" id="schemas-inductifs">
+<h2>Schémas inductifs</h2>
+<p>Preuve par récurence sur les entiers naturels (construits avec Zero, Succ)</p>
+<p>Est-ce que la fonction suivante (ou son type) vous rappellent quelque chose ?</p>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Fixpoint</span> <span class="name function">entier_nat_ind</span> <span class="operator">(</span><span class="name variable">P</span> <span class="operator">:</span> <span class="name">entier_nat</span> <span class="operator">-&gt;</span> <span class="keyword type">Prop</span><span class="operator">)</span>
+<span class="operator">(</span><span class="name variable">fZero</span> <span class="operator">:</span> <span class="name">P</span> <span class="name">Zero</span><span class="operator">)</span> <span class="operator">(</span><span class="name variable">fSucc</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">,</span> <span class="name">P</span> <span class="name">n</span> <span class="operator">-&gt;</span> <span class="name">P</span> <span class="operator">(</span><span class="name">Succ</span> <span class="name">n</span><span class="operator">))</span>
+<span class="operator">(</span><span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">)</span> <span class="operator">:</span> <span class="name">P</span> <span class="name">n</span> <span class="operator">:=</span>
+  <span class="keyword reserved">match</span> <span class="name">n</span> <span class="keyword reserved">with</span>
+  <span class="operator">|</span> <span class="name">Zero</span> <span class="operator">=&gt;</span> <span class="name">fZero</span>
+  <span class="operator">|</span> <span class="name">Succ</span> <span class="name">n</span> <span class="operator">=&gt;</span> <span class="name">fSucc</span> <span class="name">n</span> <span class="operator">(</span><span class="name">entier_nat_ind</span> <span class="name">P</span> <span class="name">fZero</span> <span class="name">fSucc</span> <span class="name">n</span><span class="operator">)</span>
+  <span class="keyword reserved">end</span><span class="operator">.</span>
+
+  <span class="operator">..</span> <span class="name">coq</span><span class="operator">::</span>
+
+     <span class="keyword namespace">Check</span> <span class="name">entier_nat_ind</span><span class="operator">.</span>
+     <span class="comment">(* .unfold *)</span>
+</pre>
+<p>Il s'agit du &quot;Principe d’induction&quot; pour les entiers naturels, généré
+automatiquement par Coq.</p>
+<p>(Et il se trouve que le &quot;code&quot; qui implémente ce principe correspond à
+l'itérateur le plus général sur le type <code class="highlight coq"><span class="name">entier_nat</span></code> :)</p>
+<p>Le type en question est donc :</p>
+<pre class="code Coq literal-block">
+<span class="keyword reserved">forall</span> <span class="name variable">P</span> <span class="operator">:</span> <span class="name">entier_nat</span> <span class="operator">-&gt;</span> <span class="keyword type">Prop</span><span class="operator">,</span> <span class="name">P</span> <span class="name">Zero</span> <span class="operator">-&gt;</span>
+  <span class="operator">(</span><span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">,</span> <span class="name">P</span> <span class="name">n</span> <span class="operator">-&gt;</span> <span class="name">P</span> <span class="operator">(</span><span class="name">Succ</span> <span class="name">n</span><span class="operator">))</span>
+<span class="operator">-&gt;</span> <span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">,</span> <span class="name">P</span> <span class="name">n</span><span class="operator">.</span>
+</pre>
+</div>
+<div class="section" id="un-peu-dintuition-sur-ce-principe-dinduction">
+<h2>Un peu d’intuition sur ce principe d’induction</h2>
+<ul class="simple">
+<li>Hypothèses :<ul>
+<li>pZero : preuve de P Zero</li>
+<li>pSucc : preuve de <span class="formula">∀<i>n</i>,  <i>P</i><i>n</i>  ⇒  <i>P</i>(<i>n</i> + 1)</span></li>
+</ul>
+</li>
+<li>Conclusion :<ul>
+<li><span class="formula">∀<i>n</i>,  <i>P</i><i>n</i></span></li>
+</ul>
+</li>
+</ul>
+<p>On peut l'écrire sous la forme d'une &quot;Règle d'inférence&quot; :</p>
+<pre class="code Coq literal-block">
+<span class="operator">(</span><span class="name">pZero</span> <span class="operator">:</span> <span class="name">P</span> <span class="name">Zero</span><span class="operator">)</span>  <span class="operator">(</span><span class="name">pSucc</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">,</span> <span class="name">P</span> <span class="name">n</span> <span class="operator">-&gt;</span> <span class="name">P</span> <span class="operator">(</span><span class="name">Succ</span> <span class="name">n</span><span class="operator">))</span>
+<span class="operator">--------------------------------------------------------------------</span>
+     <span class="name">entier_nat_ind</span> <span class="name">P</span> <span class="name">pZero</span> <span class="name">pSucc</span> <span class="operator">:</span>  <span class="keyword reserved">forall</span> <span class="name variable">n</span> <span class="operator">:</span> <span class="name">entier_nat</span><span class="operator">,</span> <span class="name">P</span> <span class="name">n</span>
+</pre>
+</div>
+<div class="section" id="l-effet-domino">
+<h2>L'effet domino</h2>
+<p>Une petite image vaut mieux qu'un long discours :</p>
+<a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:Dominoeffect.png"><img alt="CC BY-SA 3.0" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Dominoeffect.png" /></a>
+</div>
+<div class="section" id="le-type-inductif-des-listes-predefini">
+<h2>Le type inductif des listes (prédéfini)</h2>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Require Import</span> List.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Import</span> ListNotations.</span></span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
+
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk2f" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk2f"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
+     : <span class="kt">Type</span> -&gt; <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp"><span class="highlight">
+
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk30" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk30"><span class="highlight"><span class="kn">Print</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
+    nil : list A | cons : A -&gt; list A -&gt; list A
+
+<span class="kn">Arguments</span> list _%type_scope
+<span class="kn">Arguments</span> nil {A}%type_scope
+<span class="kn">Arguments</span> cons {A}%type_scope a l%list_scope : <span class="nb">rename</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre><pre class="code Coq literal-block">
+<span class="keyword namespace">Fixpoint</span> <span class="name function">list_ind</span> <span class="name variable">T</span> <span class="operator">(</span><span class="name variable">P</span> <span class="operator">:</span> <span class="name">list</span> <span class="name">T</span> <span class="operator">-&gt;</span> <span class="keyword type">Prop</span><span class="operator">)</span>
+<span class="operator">(</span><span class="name variable">pNil</span> <span class="operator">:</span> <span class="name">P</span> <span class="name">nil</span><span class="operator">)</span> <span class="operator">(</span><span class="name variable">pCons</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">x</span> <span class="name variable">l</span><span class="operator">,</span> <span class="name">P</span> <span class="name">l</span> <span class="operator">-&gt;</span> <span class="name">P</span> <span class="operator">(</span><span class="name">x</span> <span class="operator">::</span> <span class="name">l</span><span class="operator">))</span> <span class="name variable">l</span>
+<span class="operator">:</span> <span class="name">P</span> <span class="name">l</span> <span class="operator">:=</span>
+  <span class="keyword reserved">match</span> <span class="name">l</span> <span class="keyword reserved">with</span>
+  <span class="operator">|</span> <span class="operator">[]</span> <span class="operator">=&gt;</span> <span class="name">pNil</span>
+  <span class="operator">|</span> <span class="name">x</span> <span class="operator">::</span> <span class="name">r</span> <span class="operator">=&gt;</span> <span class="name">pCons</span> <span class="name">x</span> <span class="name">r</span> <span class="operator">(&#64;</span><span class="name">list_ind</span> <span class="name">T</span> <span class="name">P</span> <span class="name">pNil</span> <span class="name">pCons</span> <span class="name">r</span><span class="operator">)</span>
+  <span class="keyword reserved">end</span><span class="operator">.</span>
+</pre>
+<p>Généré automatiquement !</p>
+<p>Permet la &quot;preuve par induction&quot; sur les listes (construites avec <code class="highlight coq"><span class="operator">[]</span></code> et <code class="highlight coq"><span class="operator">::</span></code>)</p>
+</div>
+<div class="section" id="regle-d-inference-du-schema-inductif-des-listes">
+<h2>Règle d'inférence du schéma inductif des listes</h2>
+<pre class="code Coq literal-block">
+<span class="operator">(</span><span class="name">pNil</span> <span class="operator">:</span> <span class="name">P</span> <span class="operator">[])</span>  <span class="operator">(</span><span class="name">pCons</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">x</span> <span class="name variable">l</span><span class="operator">,</span> <span class="name">P</span> <span class="name">l</span> <span class="operator">-&gt;</span> <span class="name">P</span> <span class="operator">(</span><span class="name">x</span> <span class="operator">::</span> <span class="name">l</span><span class="operator">))</span>
+<span class="operator">------------------------------------------------------</span>
+        <span class="name">list_ind</span> <span class="name">P</span> <span class="name">pNil</span> <span class="name">pCons</span> <span class="operator">:</span>  <span class="keyword reserved">forall</span> <span class="name variable">l</span><span class="operator">,</span> <span class="name">P</span> <span class="name">l</span>
+</pre>
+<p>Ici, on a omis les types implicites (le param. de généricité T) par simplicité.</p>
+</div>
+<div class="section" id="correspondance-entre-les-types-et-les-formules-logiques">
+<h2>Correspondance entre les types et les formules logiques</h2>
+<div class="section" id="id2">
+<h3>La correspondance de Curry–Howard : double lecture</h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="42%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Notation</th>
+<th class="head">Lecture fonctionnelle</th>
+<th class="head">Lecture logique</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><code class="highlight coq"><span class="name">x</span> <span class="operator">:</span> <span class="name">T</span></code></td>
+<td><code class="highlight coq"><span class="name">x</span></code> a pour type <code class="highlight coq"><span class="name">T</span></code></td>
+<td><code class="highlight coq"><span class="name">x</span></code> &quot;preuve&quot; de <code class="highlight coq"><span class="name">T</span></code></td>
+</tr>
+<tr><td><em>aucun</em> <code class="highlight coq"><span class="name">x</span><span class="operator">:</span><span class="name">T</span></code></td>
+<td>le type <code class="highlight coq"><span class="name">T</span></code> est vide</td>
+<td><code class="highlight coq"><span class="name">T</span></code> est insatisfiable</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="name">P</span> <span class="operator">-&gt;</span> <span class="name">Q</span></code></td>
+<td>type des fonctions de P dans Q</td>
+<td>l'implication logique</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="name">f</span> <span class="operator">:</span> <span class="name">P</span> <span class="operator">-&gt;</span> <span class="name">Q</span></code></td>
+<td>f est une fonction de P dans Q</td>
+<td>f preuve de <tt class="docutils literal">P =&gt; Q</tt></td>
+</tr>
+<tr><td>&nbsp;</td>
+<td colspan="2">f transforme une &quot;preuve&quot; de P en une &quot;preuve&quot; de Q</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">T</span><span class="operator">,</span> <span class="name">T</span> <span class="operator">-&gt;</span> <span class="name">T</span></code></td>
+<td>type générique de l'identité</td>
+<td>exemple de tautologie</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">n</span><span class="operator">,</span> <span class="name">n</span><span class="operator">+</span><span class="literal number integer">1</span> <span class="operator">&gt;</span> <span class="name">n</span></code></td>
+<td>fonction associant à chaque
+entier une preuve</td>
+<td>quantification
+universelle</td>
+</tr>
+<tr><td><code class="highlight coq"><span class="keyword reserved">forall</span> <span class="name variable">x</span><span class="operator">:</span><span class="name">X</span><span class="operator">,</span> <span class="name">P</span> <span class="name">x</span></code></td>
+<td>fonction dont le type
+d'arrivée dépend de l'argument</td>
+<td>∀x∈X, P x</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">Remarque :</div>
+<div class="line">en Coq et contrairement à la &quot;théorie des ensembles&quot;,</div>
+<div class="line">toutes les variables quantifiées sont associées à un type (qui peut
+cependant être inféré :)</div>
+</div>
+<blockquote>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk31" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk31"><span class="highlight"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
+     : <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre></blockquote>
+</div>
+</div>
+<div class="section" id="exemple-de-types-inductifs-propositions-logiques">
+<h2>Exemple de types inductifs : propositions logiques</h2>
+<div class="section" id="la-conjonction">
+<h3>La Conjonction</h3>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">and</span> <span class="operator">(</span><span class="name variable">P</span> <span class="name variable">Q</span><span class="operator">:</span> <span class="keyword type">Prop</span><span class="operator">):</span> <span class="keyword type">Prop</span> <span class="operator">:=</span>
+  <span class="name">Conj</span> <span class="operator">(</span><span class="name">p</span><span class="operator">:</span> <span class="name">P</span><span class="operator">)</span> <span class="operator">(</span><span class="name">q</span><span class="operator">:</span> <span class="name">Q</span><span class="operator">).</span>
+
+<span class="operator">--&gt;</span>
+
+  <span class="operator">(</span><span class="name">p</span> <span class="operator">:</span> <span class="name">P</span><span class="operator">)</span>  <span class="operator">(</span><span class="name">q</span> <span class="operator">:</span> <span class="name">Q</span><span class="operator">)</span>
+<span class="operator">--------------------</span>
+ <span class="name">Conj</span> <span class="name">p</span> <span class="name">q</span> <span class="operator">:</span>  <span class="name">P</span> <span class="operator">/\</span> <span class="name">Q</span>
+</pre>
+</div>
+<div class="section" id="la-disjonction">
+<h3>La Disjonction</h3>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">or</span> <span class="operator">(</span><span class="name variable">P</span> <span class="name variable">Q</span><span class="operator">:</span> <span class="keyword type">Prop</span><span class="operator">):</span> <span class="keyword type">Prop</span> <span class="operator">:=</span>
+  <span class="operator">|</span> <span class="name">Or1</span> <span class="operator">(</span><span class="name">p</span><span class="operator">:</span> <span class="name">P</span><span class="operator">)</span>
+  <span class="operator">|</span> <span class="name">Or2</span> <span class="operator">(</span><span class="name">q</span><span class="operator">:</span> <span class="name">Q</span><span class="operator">).</span>
+
+<span class="operator">--&gt;</span>
+
+      <span class="name">p</span> <span class="operator">:</span> <span class="name">P</span>              <span class="name">q</span> <span class="operator">:</span> <span class="name">Q</span>
+<span class="operator">-----------------</span>  <span class="operator">-----------------</span>
+ <span class="name">Or1</span> <span class="name">p</span> <span class="operator">:</span>  <span class="name">P</span> <span class="operator">\/</span> <span class="name">Q</span>    <span class="name">Or2</span> <span class="name">q</span> <span class="operator">:</span>  <span class="name">P</span> <span class="operator">\/</span> <span class="name">Q</span>
+</pre>
+</div>
+<div class="section" id="la-proposition-true">
+<h3>La proposition True</h3>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">True</span> <span class="operator">:</span> <span class="keyword type">Prop</span> <span class="operator">:=</span> <span class="name">I</span><span class="operator">.</span>  <span class="operator">--&gt;</span>  <span class="operator">----------</span>
+                                   <span class="name">I</span> <span class="operator">:</span> <span class="keyword type">True</span>
+</pre>
+</div>
+<div class="section" id="la-proposition-false">
+<h3>La proposition False</h3>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">False</span> <span class="operator">:</span> <span class="keyword type">Prop</span> <span class="operator">:=</span> <span class="operator">.</span>  <span class="operator">--&gt;</span>  <span class="name">pas</span> <span class="name">de</span> <span class="name">preuve</span> <span class="name">de</span> <span class="operator">`</span><span class="keyword type">False</span><span class="operator">`</span> <span class="operator">!</span>
+</pre>
+</div>
+<div class="section" id="et-la-quantification-existentielle">
+<h3>Et la quantification existentielle ?</h3>
+<pre class="code Coq literal-block">
+<span class="keyword namespace">Inductive</span> <span class="name function">ex</span> <span class="name variable">T</span> <span class="operator">(</span><span class="name variable">P</span><span class="operator">:</span> <span class="name">T</span> <span class="operator">-&gt;</span> <span class="keyword type">Prop</span><span class="operator">)</span> <span class="operator">:=</span>
+  <span class="name">ex_intro</span> <span class="operator">(</span><span class="name">t</span><span class="operator">:</span> <span class="name">T</span><span class="operator">)</span> <span class="operator">(</span><span class="name">p</span><span class="operator">:</span> <span class="name">P</span> <span class="name">t</span><span class="operator">).</span>
+
+<span class="operator">--&gt;</span>
+
+          <span class="operator">(</span><span class="name">t</span> <span class="operator">:</span> <span class="name">T</span><span class="operator">)</span>  <span class="operator">(</span><span class="name">p</span> <span class="operator">:</span> <span class="name">P</span> <span class="name">t</span><span class="operator">)</span>
+<span class="operator">----------------------------------------</span>
+ <span class="operator">&#64;</span><span class="name">ex_intro</span> <span class="name">T</span> <span class="name">P</span> <span class="name">t</span> <span class="name">p</span> <span class="operator">:</span>  <span class="keyword reserved">exists</span> <span class="name variable">x</span> <span class="operator">:</span> <span class="name">T</span><span class="operator">,</span> <span class="name">P</span> <span class="name">x</span>
+</pre>
+</div>
+</div>
+<div class="section" id="a-suivre-au-prochain-cours">
+<h2>À suivre au prochain cours</h2>
+<ul>
+<li><p class="first">Retour sur la correspondance de Curry-Howard</p>
+</li>
+<li><div class="first line-block">
+<div class="line">Présentation des &quot;tactiques Coq&quot;</div>
+<div class="line">pour construire une preuve interactivement/semi-automatiquement !</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

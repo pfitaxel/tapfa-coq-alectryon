@@ -852,13 +852,14 @@ Cons (Succ Zero) (Vide entier_nat)
   <span class="operator">|</span> <span class="name">Zero</span> <span class="operator">=&gt;</span> <span class="name">fZero</span>
   <span class="operator">|</span> <span class="name">Succ</span> <span class="name">n</span> <span class="operator">=&gt;</span> <span class="name">fSucc</span> <span class="name">n</span> <span class="operator">(</span><span class="name">entier_nat_ind</span> <span class="name">P</span> <span class="name">fZero</span> <span class="name">fSucc</span> <span class="name">n</span><span class="operator">)</span>
   <span class="keyword reserved">end</span><span class="operator">.</span>
-
-  <span class="operator">..</span> <span class="name">coq</span><span class="operator">::</span>
-
-     <span class="keyword namespace">Check</span> <span class="name">entier_nat_ind</span><span class="operator">.</span>
-     <span class="comment">(* .unfold *)</span>
 </pre>
-<p>Il s'agit du &quot;Principe d’induction&quot; pour les entiers naturels, généré
+<p>qui a pour type :</p>
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk32" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk32"><span class="highlight"><span class="kn">Check</span> entier_nat_ind.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">entier_nat_ind
+     : <span class="kr">forall</span> <span class="nv">P</span> : entier_nat -&gt; <span class="kt">Prop</span>,
+       P Zero -&gt;
+       (<span class="kr">forall</span> <span class="nv">p</span> : entier_nat, P p -&gt; P (Succ p)) -&gt;
+       <span class="kr">forall</span> <span class="nv">e</span> : entier_nat, P e</span></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span></pre><p>Il s'agit du &quot;Principe d’induction&quot; pour les entiers naturels, généré
 automatiquement par Coq.</p>
 <p>(Et il se trouve que le &quot;code&quot; qui implémente ce principe correspond à
 l'itérateur le plus général sur le type <code class="highlight coq"><span class="name">entier_nat</span></code> :)</p>
@@ -900,11 +901,11 @@ l'itérateur le plus général sur le type <code class="highlight coq"><span cla
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Import</span> ListNotations.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
 
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk32" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk32"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk33" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk33"><span class="highlight"><span class="kn">Check</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">list
      : <span class="kt">Type</span> -&gt; <span class="kt">Type</span></span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
 
-</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk33" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk33"><span class="highlight"><span class="kn">Print</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
+</span></span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk34" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk34"><span class="highlight"><span class="kn">Print</span> list.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
     nil : list A | cons : A -&gt; list A -&gt; list A
 
 <span class="kn">Arguments</span> list _%type_scope
@@ -991,7 +992,7 @@ d'arrivée dépend de l'argument</td>
 cependant être inféré :)</div>
 </div>
 <blockquote>
-<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk34" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk34"><span class="highlight"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
+<pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk35" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk35"><span class="highlight"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
      : <span class="kt">Prop</span></span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre></blockquote>
 </div>

@@ -6,6 +6,7 @@
 <meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
 <title>TAPFA - Partie Coq - Modules et Types Abstraits</title>
 <meta name="date" content="L3 Info, Semestre 6, Année 2020-2021" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
 <link rel="stylesheet" href="alectryon.css" type="text/css" />
 <link rel="stylesheet" href="docutils_basic.css" type="text/css" />
 <link rel="stylesheet" href="tango_subtle.css" type="text/css" />
@@ -13,10 +14,10 @@
 <script type="text/javascript" src="alectryon.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
-<link rel="stylesheet" href="math.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.0. Coq sources are in this panel; goals and messages will appear in the other. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus.</div><div class="document" id="tapfa-partie-coq-modules-et-types-abstraits">
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.1. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document" id="tapfa-partie-coq-modules-et-types-abstraits">
 <h1 class="title">TAPFA - Partie Coq - Modules et Types Abstraits</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
@@ -60,8 +61,8 @@
 <p>Définition des identificateurs déclarés dans la spécification</p>
 <p>Implantations possibles du monoide&nbsp;:</p>
 <ul class="simple">
-<li>entiers avec <span class="formula">0</span> et <span class="formula"> + </span></li>
-<li>entiers avec <span class="formula">1</span> et <span class="formula">*</span></li>
+<li>entiers avec <span class="math">\(0\)</span> et <span class="math">\(+\)</span></li>
+<li>entiers avec <span class="math">\(1\)</span> et <span class="math">\(*\)</span></li>
 <li>listes avec concaténation</li>
 <li>type singleton</li>
 <li>…</li>

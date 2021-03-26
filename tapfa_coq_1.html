@@ -6,6 +6,7 @@
 <meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
 <title>TAPFA - Partie Coq</title>
 <meta name="date" content="L3 Info, Semestre 6, Année 2020-2021" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
 <link rel="stylesheet" href="alectryon.css" type="text/css" />
 <link rel="stylesheet" href="docutils_basic.css" type="text/css" />
 <link rel="stylesheet" href="tango_subtle.css" type="text/css" />
@@ -13,10 +14,10 @@
 <script type="text/javascript" src="alectryon.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
-<link rel="stylesheet" href="math.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.0. Coq sources are in this panel; goals and messages will appear in the other. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus.</div><div class="document" id="tapfa-partie-coq">
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.1. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document" id="tapfa-partie-coq">
 <h1 class="title">TAPFA - Partie Coq</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
@@ -62,7 +63,7 @@ muni d’un environnement de preuve interactive (vu au Cours n°2).</p>
 B.&nbsp;Werner]</p>
 </li>
 <li><p class="first">MathComp : bibliothèque d’algèbre et preuve formelle du théorème
-de Feit–Thompson (la preuve papier fait <span class="formula"> &gt; 300</span> pages)
+de Feit–Thompson (la preuve papier fait <span class="math">\({&gt;}300\)</span> pages)
 [Inria, Microsoft Research]</p>
 </li>
 <li><div class="first line-block">
@@ -468,7 +469,7 @@ il faut expliciter ces arguments.</p>
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v4</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">x</span> : T) := x.</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* ou *)</span>
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v5</span> <span class="nv">T</span> (<span class="nv">x</span> : T) := x.</span></span></span></pre><p><span class="formula">⇝</span> ces fonctions ont toutes 2 arguments !</p>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Definition</span> <span class="nf">id_v5</span> <span class="nv">T</span> (<span class="nv">x</span> : T) := x.</span></span></span></pre><p><span class="math">\(\leadsto\)</span> ces fonctions ont toutes 2 arguments !</p>
 <p>Utilisation d’une fonction générique</p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk1e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk1e"><span class="highlight"><span class="kn">Check</span> id nat.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id nat
      : nat -&gt; nat</span></blockquote></div></div></small><span class="alectryon-wsp">
@@ -493,10 +494,10 @@ il faut expliciter ces arguments.</p>
 <h2>Généricité et typage</h2>
 <p>Type d’une fonction générique</p>
 <ul class="simple">
-<li>En OCaml : <tt class="docutils literal">id : 'a <span class="pre">-&gt;</span> 'a</tt> <span class="formula">⇝</span> pour tout type <tt class="docutils literal">'a</tt>,
+<li>En OCaml : <tt class="docutils literal">id : 'a <span class="pre">-&gt;</span> 'a</tt> <span class="math">\(\leadsto\)</span> pour tout type <tt class="docutils literal">'a</tt>,
 id prend un argument de type <tt class="docutils literal">'a</tt> et retourne un résultat de
 type <tt class="docutils literal">'a</tt></li>
-<li>En Coq : <code class="highlight coq"><span class="name">id</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">a</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span></code> <span class="formula">⇝</span> la quantification
+<li>En Coq : <code class="highlight coq"><span class="name">id</span> <span class="operator">:</span> <span class="keyword reserved">forall</span> <span class="name variable">a</span><span class="operator">,</span> <span class="name">a</span> <span class="operator">-&gt;</span> <span class="name">a</span></code> <span class="math">\(\leadsto\)</span> la quantification
 est explicite</li>
 <li>extension du langage des termes :</li>
 </ul>
@@ -572,7 +573,7 @@ id&#39; <span class="kr">is</span> not universe polymorphic
 <span class="kn">Arguments</span> id&#39; [T]%type_scope
 id&#39; <span class="kr">is</span> transparent
 Expands to: Constant SerTop.id&#39;</span></blockquote></div></div></small><span class="alectryon-wsp">
-</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* id&#39; : forall [T : Type], T -&gt; T *)</span></span></span></pre><p>(<span class="formula">⇝</span> noter le [T] au lieu de T)</p>
+</span></span><span class="alectryon-wsp"><span class="highlight"><span class="c">(* id&#39; : forall [T : Type], T -&gt; T *)</span></span></span></pre><p>(<span class="math">\(\leadsto\)</span> noter le [T] au lieu de T)</p>
 <p>L'argument T est implicite : il peut être inféré à partir de l'argument d'après.</p>
 <p>D'où une syntaxe concise à la OCaml :</p>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk29" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk29"><span class="highlight"><span class="kn">Check</span> id&#39; true.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="highlight">id&#39; true
@@ -606,7 +607,7 @@ Grâce aux arguments implicites, entrer <code class="highlight coq"><span class=
 <p><tt class="docutils literal">let comp f g x = g (f <span class="pre">x);;</span></tt></p>
 <p><tt class="docutils literal">val comp : (’a <span class="pre">-&gt;</span> ’b) <span class="pre">-&gt;</span> (’b <span class="pre">-&gt;</span> ’c) <span class="pre">-&gt;</span> ’a <span class="pre">-&gt;</span> ’c = &lt;fun&gt;</tt></p>
 <p><tt class="docutils literal">comp (fun x <span class="pre">-&gt;</span> x + 1) (fun x <span class="pre">-&gt;</span> x * 2) 3;;</tt></p>
-<p><span class="formula">⇝</span> ?</p>
+<p><span class="math">\(\leadsto\)</span> ?</p>
 <p>En Coq :</p>
 <p>Pas de synthèse du nom des paramètres de généricité : il faut
 déclarer ces paramètres de généricité lors de la définition.</p>
@@ -875,11 +876,11 @@ l'itérateur le plus général sur le type <code class="highlight coq"><span cla
 <ul class="simple">
 <li>Hypothèses :<ul>
 <li>pZero : preuve de P Zero</li>
-<li>pSucc : preuve de <span class="formula">∀<i>n</i>,  <i>P</i><i>n</i>  ⇒  <i>P</i>(<i>n</i> + 1)</span></li>
+<li>pSucc : preuve de <span class="math">\(\forall n,\ P n \implies P (n+1)\)</span></li>
 </ul>
 </li>
 <li>Conclusion :<ul>
-<li><span class="formula">∀<i>n</i>,  <i>P</i><i>n</i></span></li>
+<li><span class="math">\(\forall n,\ P n\)</span></li>
 </ul>
 </li>
 </ul>

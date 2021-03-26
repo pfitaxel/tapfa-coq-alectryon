@@ -6,6 +6,7 @@
 <meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
 <title>TAPFA - Partie Coq - Preuve assistée</title>
 <meta name="date" content="L3 Info, Semestre 6, Année 2020-2021" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
 <link rel="stylesheet" href="alectryon.css" type="text/css" />
 <link rel="stylesheet" href="docutils_basic.css" type="text/css" />
 <link rel="stylesheet" href="tango_subtle.css" type="text/css" />
@@ -13,10 +14,10 @@
 <script type="text/javascript" src="alectryon.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
-<link rel="stylesheet" href="math.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.0. Coq sources are in this panel; goals and messages will appear in the other. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus.</div><div class="document" id="tapfa-partie-coq-preuve-assistee">
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.1. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document" id="tapfa-partie-coq-preuve-assistee">
 <h1 class="title">TAPFA - Partie Coq - Preuve assistée</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
@@ -36,7 +37,7 @@
 <div class="section" id="principe">
 <h1>Principe</h1>
 <ul class="simple">
-<li>Prouver une propriété <code class="highlight coq"><span class="name">P</span></code> <span class="formula"> ≡ </span> Construire un terme de type <code class="highlight coq"><span class="name">P</span></code>.</li>
+<li>Prouver une propriété <code class="highlight coq"><span class="name">P</span></code> <span class="math">\(\equiv\)</span> Construire un terme de type <code class="highlight coq"><span class="name">P</span></code>.</li>
 </ul>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="highlight"><span class="kn">Parameters</span> (<span class="nv">p</span> : <span class="kt">Prop</span>) (<span class="nv">q</span> : <span class="kt">Prop</span>).</span></span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="highlight">
@@ -79,7 +80,7 @@
 </pre>
 <p>Cas d’utilisation de <code class="highlight coq"><span class="name builtin">intro</span></code></p>
 <p>Lorsque le but est une implication ou une
-quantification universelle <span class="formula">⇝</span> introduction de l’hypothèse
+quantification universelle <span class="math">\(\leadsto\)</span> introduction de l’hypothèse
 dans le contexte</p>
 </div>
 <div class="section" id="preuve-dune-egalite">
@@ -91,7 +92,7 @@ dans le contexte</p>
 </pre>
 <p>Cas d’utilisation de <code class="highlight coq"><span class="name builtin pseudo">reflexivity</span></code></p>
 <p>Lorsque le but est une égalité
-entre 2 termes identiques (modulo calcul) <span class="formula">⇝</span> fin de la
+entre 2 termes identiques (modulo calcul) <span class="math">\(\leadsto\)</span> fin de la
 preuve.</p>
 <p>Exemple</p>
 <pre class="code Coq literal-block">
@@ -102,7 +103,7 @@ preuve.</p>
 </div>
 <div class="section" id="reecriture-utilisation-dune-egalite">
 <h2>Réécriture (utilisation d’une égalité)</h2>
-<p>Soit <code class="highlight coq"><span class="name">E</span> <span class="operator">:</span> <span class="name">t_1</span> <span class="operator">=</span> <span class="name">t_2</span></code> un théorème ou une hypothèse du contexte <span class="formula">Γ</span></p>
+<p>Soit <code class="highlight coq"><span class="name">E</span> <span class="operator">:</span> <span class="name">t_1</span> <span class="operator">=</span> <span class="name">t_2</span></code> un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span></p>
 <pre class="code Coq literal-block">
 <span class="name">Γ</span>     <span class="operator">--&gt;</span> <span class="name builtin">rewrite</span> <span class="name">E</span> <span class="operator">--&gt;</span>   <span class="name">Γ</span>
 <span class="operator">====</span>                      <span class="operator">====</span>
@@ -147,7 +148,7 @@ preuve.</p>
 <code class="highlight coq"><span class="name">E</span> <span class="operator">:</span> <span class="keyword reserved">∀</span> <span class="name variable">x1</span> <span class="operator">...</span> <span class="name">xk</span><span class="operator">,</span>
 <span class="name">p1</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span> <span class="operator">-&gt;</span> <span class="operator">⋅⋅⋅</span> <span class="operator">-&gt;</span> <span class="name">pn</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span> <span class="operator">-&gt;</span>
 <span class="name">t</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span> <span class="operator">=</span> <span class="name">t'</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span></code>,
-un théorème ou une hypothèse du contexte <span class="formula">Γ</span></p>
+un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span></p>
 <pre class="code Coq literal-block">
 <span class="name">Γ</span>                 <span class="operator">--&gt;</span> <span class="name builtin">rewrite</span> <span class="name">E</span> <span class="operator">--&gt;</span>   <span class="name">Γ</span>
 <span class="operator">===============</span>                       <span class="operator">================</span>
@@ -189,7 +190,7 @@ un théorème ou une hypothèse du contexte <span class="formula">Γ</span></p>
 <p>Soit <code class="highlight coq"><span class="name">H</span> <span class="operator">:</span> <span class="keyword reserved">∀</span> <span class="name variable">x1</span> <span class="operator">...</span> <span class="name">xk</span><span class="operator">,</span>
 <span class="name">p1</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span> <span class="operator">-&gt;</span> <span class="operator">⋅⋅⋅</span> <span class="operator">-&gt;</span> <span class="name">pn</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span> <span class="operator">-&gt;</span>
 <span class="name">q</span> <span class="name">x1</span> <span class="operator">...</span> <span class="name">xk</span></code>,
-un théorème ou une hypothèse du contexte <span class="formula">Γ</span></p>
+un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span></p>
 <pre class="code Coq literal-block">
 <span class="name">Γ</span>             <span class="operator">--&gt;</span> <span class="name builtin">apply</span> <span class="name">H</span> <span class="operator">--&gt;</span>   <span class="name">Γ</span>
 <span class="operator">===========</span>                     <span class="operator">============</span>
@@ -239,7 +240,7 @@ définie récursivement par rapport à son premier argument :</p>
 </li>
 <li><p class="first"><code class="highlight coq"><span class="literal number integer">1</span> <span class="operator">+</span> <span class="name">n</span></code> se réduit par calcul à <code class="highlight coq"><span class="name">S</span> <span class="name">n</span></code></p>
 </li>
-<li><p class="first"><span class="formula">⇝</span> donc on peut prouver trivialement <code class="highlight coq"><span class="literal number integer">1</span> <span class="operator">+</span> <span class="name">n</span> <span class="operator">=</span> <span class="name">S</span> <span class="name">n</span></code> (par réflexivité)</p>
+<li><p class="first"><span class="math">\(\leadsto\)</span> donc on peut prouver trivialement <code class="highlight coq"><span class="literal number integer">1</span> <span class="operator">+</span> <span class="name">n</span> <span class="operator">=</span> <span class="name">S</span> <span class="name">n</span></code> (par réflexivité)</p>
 </li>
 <li><p class="first">mais <strong>on a besoin d’une preuve par induction</strong> pour montrer que</p>
 <pre class="code Coq literal-block">
@@ -337,15 +338,20 @@ mesure les lemmes intermédiaires qui méritent d’être prouvés à part.</p>
 <p>À la main :</p>
 <p>Prouvons le lemme <code class="highlight coq"><span class="name">app_nil</span></code> par induction structurelle sur la liste <code class="highlight coq"><span class="name">l</span></code>.</p>
 <ul class="simple">
-<li>Si <code class="highlight coq"><span class="name">l</span></code> est la liste vide <code class="highlight coq"><span class="operator">[]</span></code>, on a bien <code class="highlight coq"><span class="operator">[]</span> <span class="operator">=</span> <span class="operator">[]</span> <span class="operator">++</span> <span class="operator">[]</span></code>
-en simplifiant la définition de <code class="highlight coq"><span class="name">app</span></code>.</li>
-<li>Sinon, <code class="highlight coq"><span class="name">l</span></code> est de la forme <code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span></code>. En supposant que <code class="highlight coq"><span class="name">l'</span> <span class="operator">=</span> <span class="name">l'</span> <span class="operator">++</span> <span class="operator">[]</span></code>
-(appelons cette hypothèse d'induction <code class="highlight coq"><span class="name">IHl</span></code>), montrons que
-<code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="operator">(</span><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span><span class="operator">)</span> <span class="operator">++</span> <span class="operator">[]</span></code>. En simplifiant la définition de <code class="highlight coq"><span class="name">app</span></code>
-on doit donc prouver que <code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">::</span> <span class="operator">(</span><span class="name">l'</span> <span class="operator">++</span> <span class="operator">[])</span></code>, soit en appliquant
-<code class="highlight coq"><span class="name">IHl</span></code>, que <code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span></code>.</li>
+<li>Cas de base (si <code class="highlight coq"><span class="name">l</span></code> est la liste vide <code class="highlight coq"><span class="operator">[]</span></code>). On doit montrer que
+<code class="highlight coq"><span class="operator">[]</span> <span class="operator">=</span> <span class="operator">[]</span> <span class="operator">++</span> <span class="operator">[]</span></code>, soit, après simplification de la définition de <code class="highlight coq"><span class="name">app</span></code>,
+<code class="highlight coq"><span class="operator">[]</span> <span class="operator">=</span> <span class="operator">[]</span></code>. CQFD.</li>
+<li>Cas inductif (si <code class="highlight coq"><span class="name">l</span></code> est de la forme <code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span></code>).
+Fixons un <code class="highlight coq"><span class="name">x</span> <span class="operator">:</span> <span class="name">T</span></code> et un <code class="highlight coq"><span class="name">l'</span> <span class="operator">:</span> <span class="name">list</span> <span class="name">T</span></code>, supposons que <code class="highlight coq"><span class="name">l'</span> <span class="operator">=</span> <span class="name">l'</span> <span class="operator">++</span> <span class="operator">[]</span></code>
+et appelons cette hypothèse d'induction <code class="highlight coq"><span class="name">IHl</span></code>.
+Montrons qu'alors <code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="operator">(</span><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span><span class="operator">)</span> <span class="operator">++</span> <span class="operator">[]</span></code>.
+En simplifiant la définition de <code class="highlight coq"><span class="name">app</span></code> on doit donc prouver que
+<code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">::</span> <span class="operator">(</span><span class="name">l'</span> <span class="operator">++</span> <span class="operator">[])</span></code>, soit après avoir utilisé <code class="highlight coq"><span class="name">IHl</span></code>, que
+<code class="highlight coq"><span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">::</span> <span class="name">l'</span></code>. CQFD.</li>
 </ul>
-<p>En Coq :</p>
+</div>
+<div class="section" id="premier-lemme-preuve-par-induction-version-coq">
+<h2>Premier lemme – preuve par induction (version Coq)</h2>
 <pre class="alectryon-io"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk21" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk21"><span class="highlight"><span class="kn">Lemma</span> <span class="nf">app_nil</span> : <span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ [].</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ []</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk22" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk22"><span class="highlight"><span class="kn">Proof</span>.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ []</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk23" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk23"><span class="highlight"><span class="nb">induction</span> l.</span></label><small class="alectryon-output"><div class="alectryon-output-sticky-wrapper"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><div class="goal-hyp"><span class="hyp-names">T</span><span><span class="hyp-type-block"><span class="hyp-punct">:</span><span class="hyp-type"><span class="highlight"><span class="kt">Type</span></span></span></span></span></div></div><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="highlight">[] = [] ++ []</span></div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="tapfa-coq-2-v-chk24" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><div class="goal-hyp"><span class="hyp-names">T</span><span><span class="hyp-type-block"><span class="hyp-punct">:</span><span class="hyp-type"><span class="highlight"><span class="kt">Type</span></span></span></span></span></div><div class="goal-hyp"><span class="hyp-names">a</span><span><span class="hyp-type-block"><span class="hyp-punct">:</span><span class="hyp-type"><span class="highlight">T</span></span></span></span></div><div class="goal-hyp"><span class="hyp-names">l</span><span><span class="hyp-type-block"><span class="hyp-punct">:</span><span class="hyp-type"><span class="highlight">list T</span></span></span></span></div><div class="goal-hyp"><span class="hyp-names">IHl</span><span><span class="hyp-type-block"><span class="hyp-punct">:</span><span class="hyp-type"><span class="highlight">l = l ++ []</span></span></span></span></div></div><label class="goal-separator alectryon-extra-goal-label" for="tapfa-coq-2-v-chk24"><hr></label><div class="goal-conclusion"><span class="highlight">a :: l = (a :: l) ++ []</span></div></blockquote></div></div></div></small><span class="alectryon-wsp">

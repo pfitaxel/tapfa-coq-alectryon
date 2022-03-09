@@ -31,7 +31,7 @@
 <li><p><a class="reference external" href="https://pfitaxel.github.io/tapfa-coq-alectryon/">https://pfitaxel.github.io/tapfa-coq-alectryon/</a></p></li>
 </ul>
 <section id="principe">
-<h2>Principe</h2>
+<h2>Principe<a class="self-link" title="link to this section" href="#principe"></a></h2>
 <ul class="simple">
 <li><p>Prouver une propriété <code class="highlight coq"><span class="n">P</span></code> <span class="math">\(\equiv\)</span> Construire un terme de type <code class="highlight coq"><span class="n">P</span></code>.</p></li>
 </ul>
@@ -55,9 +55,9 @@
 <span class="kn">Arguments</span> th&#39; _ _%function_scope</blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre></section>
 <section id="les-principales-tactiques-de-preuve">
-<h2>Les principales tactiques de preuve</h2>
+<h2>Les principales tactiques de preuve<a class="self-link" title="link to this section" href="#les-principales-tactiques-de-preuve"></a></h2>
 <section id="la-tactique-intro-variante-intros-h-1-h-n">
-<h3>La tactique <code class="highlight coq"><span class="nb">intro</span></code> (variante : <code class="highlight coq"><span class="nb">intros</span> <span class="n">H_1</span> <span class="o">…</span> <span class="n">H_n</span></code>)</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">intro</span></code> (variante : <code class="highlight coq"><span class="nb">intros</span> <span class="n">H_1</span> <span class="o">…</span> <span class="n">H_n</span></code>)<a class="self-link" title="link to this section" href="#la-tactique-intro-variante-intros-h-1-h-n"></a></h3>
 <pre class="code Coq literal-block"><code><span class="n">h_1</span> <span class="o">:</span> <span class="n">e_1</span>                       <span class="n">h_1</span> <span class="o">:</span> <span class="n">e_1</span>
    <span class="o">...</span>        <span class="o">--&gt;</span> <span class="nb">intro</span> <span class="n">H</span> <span class="o">--&gt;</span>      <span class="o">...</span>
 <span class="n">h_n</span> <span class="o">:</span> <span class="n">e_n</span>                       <span class="n">h_n</span> <span class="o">:</span> <span class="n">e_n</span>
@@ -78,7 +78,7 @@ quantification universelle <span class="math">\(\leadsto\)</span> introduction d
 dans le contexte</p>
 </section>
 <section id="preuve-dune-egalite">
-<h3>Preuve d’une égalité</h3>
+<h3>Preuve d’une égalité<a class="self-link" title="link to this section" href="#preuve-dune-egalite"></a></h3>
 <pre class="code Coq literal-block"><code><span class="n">Γ</span>        <span class="o">--&gt;</span> <span class="bp">reflexivity</span> <span class="o">--&gt;</span>   <span class="o">∅</span> <span class="n">si</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t'</span>
 <span class="o">======</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">t'</span></code></pre>
@@ -92,7 +92,7 @@ preuve.</p>
 <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
 </section>
 <section id="reecriture-utilisation-dune-egalite">
-<h3>Réécriture (utilisation d’une égalité)</h3>
+<h3>Réécriture (utilisation d’une égalité)<a class="self-link" title="link to this section" href="#reecriture-utilisation-dune-egalite"></a></h3>
 <p>Soit <code class="highlight coq"><span class="n">E</span> <span class="o">:</span> <span class="n">t_1</span> <span class="o">=</span> <span class="n">t_2</span></code> un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span></p>
 <pre class="code Coq literal-block"><code><span class="n">Γ</span>     <span class="o">--&gt;</span> <span class="nb">rewrite</span> <span class="n">E</span> <span class="o">--&gt;</span>   <span class="n">Γ</span>
 <span class="o">====</span>                      <span class="o">====</span>
@@ -116,7 +116,7 @@ preuve.</p>
 <span class="n">G</span>                                     <span class="n">G</span></code></pre>
 </section>
 <section id="reecriture-exemple">
-<h3>Réécriture (exemple)</h3>
+<h3>Réécriture (exemple)<a class="self-link" title="link to this section" href="#reecriture-exemple"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk5"><span class="kn">Theorem</span> <span class="nf">exemple_de_propriete_prouvee_par_reecriture</span> :
   <span class="kr">forall</span> <span class="nv">f</span> : nat -&gt; nat,
     (<span class="kr">forall</span> <span class="nv">n</span> : nat, f n = f (S n)) -&gt;
@@ -131,7 +131,7 @@ preuve.</p>
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span></span></pre></section>
 <section id="reecriture-cas-general-ou-le-theoreme-e-a-des-conditions">
-<h3>Réécriture (cas général où le théorème <span class="docutils literal">E</span> a des conditions)</h3>
+<h3>Réécriture (cas général où le théorème <span class="docutils literal">E</span> a des conditions)<a class="self-link" title="link to this section" href="#reecriture-cas-general-ou-le-theoreme-e-a-des-conditions"></a></h3>
 <p>Soit
 <code class="highlight coq"><span class="n">E</span> <span class="o">:</span> <span class="kr">∀</span> <span class="nv">x1</span> <span class="o">...</span> <span class="n">xk</span><span class="o">,</span>
 <span class="n">p1</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="o">-&gt;</span> <span class="o">⋅⋅⋅</span> <span class="o">-&gt;</span> <span class="n">pn</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="o">-&gt;</span>
@@ -154,7 +154,7 @@ un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span>
                                       <span class="c">(* n conditions requises par le théorème E *)</span></code></pre>
 </section>
 <section id="reecriture-exemple-avec-une-condition">
-<h3>Réécriture (exemple avec une condition)</h3>
+<h3>Réécriture (exemple avec une condition)<a class="self-link" title="link to this section" href="#reecriture-exemple-avec-une-condition"></a></h3>
 <pre class="code Coq literal-block"><code><span class="n">pred</span> <span class="o">:</span> <span class="n">nat</span> <span class="o">-&gt;</span> <span class="n">nat</span>                             <span class="n">pred</span> <span class="o">:</span> <span class="n">nat</span> <span class="o">-&gt;</span> <span class="n">nat</span>
 <span class="n">E</span> <span class="o">:</span> <span class="kr">∀</span> <span class="nv">x</span> <span class="o">:</span> <span class="n">nat</span><span class="o">,</span> <span class="n">O</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">-&gt;</span>                       <span class="n">E</span> <span class="o">:</span> <span class="kr">∀</span> <span class="nv">x</span> <span class="o">:</span> <span class="n">nat</span><span class="o">,</span> <span class="n">O</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">-&gt;</span>
     <span class="n">S</span> <span class="o">(</span><span class="n">pred</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span>                                <span class="n">S</span> <span class="o">(</span><span class="n">pred</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span>
@@ -170,7 +170,7 @@ un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span>
                                               <span class="n">O</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span></code></pre>
 </section>
 <section id="la-tactique-apply-variante-apply-h-with-x-i-v-i">
-<h3>La tactique <code class="highlight coq"><span class="nb">apply</span></code> (variante : <code class="highlight coq"><span class="nb">apply</span> <span class="n">H</span> <span class="kr">with</span> <span class="o">(</span><span class="n">x_i</span><span class="o">:=</span><span class="n">v_i</span><span class="o">)</span></code> …)</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">apply</span></code> (variante : <code class="highlight coq"><span class="nb">apply</span> <span class="n">H</span> <span class="kr">with</span> <span class="o">(</span><span class="n">x_i</span><span class="o">:=</span><span class="n">v_i</span><span class="o">)</span></code> …)<a class="self-link" title="link to this section" href="#la-tactique-apply-variante-apply-h-with-x-i-v-i"></a></h3>
 <p>Soit <code class="highlight coq"><span class="n">H</span> <span class="o">:</span> <span class="kr">∀</span> <span class="nv">x1</span> <span class="o">...</span> <span class="n">xk</span><span class="o">,</span>
 <span class="n">p1</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="o">-&gt;</span> <span class="o">⋅⋅⋅</span> <span class="o">-&gt;</span> <span class="n">pn</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="o">-&gt;</span>
 <span class="n">q</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span></code>,
@@ -188,7 +188,7 @@ un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span>
                                 <span class="c">(* n conditions requises pour appliquer H *)</span></code></pre>
 </section>
 <section id="la-tactique-apply-exemple">
-<h3>La tactique <code class="highlight coq"><span class="nb">apply</span></code> (exemple)</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">apply</span></code> (exemple)<a class="self-link" title="link to this section" href="#la-tactique-apply-exemple"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-2-v-chkb" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chkb"><span class="kn">Search</span> concl:(_ &lt;= _) S.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">le_S: <span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, n &lt;= m -&gt; n &lt;= S m</blockquote><blockquote class="alectryon-message">le_n_S: <span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, n &lt;= m -&gt; S n &lt;= S m</blockquote><blockquote class="alectryon-message">le_S_n: <span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, S n &lt;= S m -&gt; n &lt;= m</blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre><p>(<a class="reference external" href="https://coq.github.io/doc/V8.12.2/refman/proof-engine/vernacular-commands.html#coq:cmd.search">documentation de la commande Search</a>)</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chkc" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chkc"><span class="kn">Goal</span> <span class="kr">forall</span> <span class="nv">n</span>, n &lt;= S (S n).</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">n</span> : nat, n &lt;= S (S n)</div></blockquote></div></div></small><span class="alectryon-wsp">
@@ -199,22 +199,22 @@ un théorème ou une hypothèse du contexte <span class="math">\(\Gamma\)</span>
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk10"><span class="nb">apply</span> le_S.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">n &lt;= S n</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Abort</span>.</span></span></pre></section>
 <section id="la-tactique-induction-applique-le-theoreme-dinduction">
-<h3>La tactique <code class="highlight coq"><span class="nb">induction</span></code> : applique le théorème d’induction</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">induction</span></code> : applique le théorème d’induction<a class="self-link" title="link to this section" href="#la-tactique-induction-applique-le-theoreme-dinduction"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk11" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk11"><span class="kn">Theorem</span> <span class="nf">add_comm</span> : <span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, n + m = m + n.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, n + m = m + n</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk12" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk12"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">n</span> <span class="nv">m</span> : nat, n + m = m + n</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk13" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk13"><span class="nb">induction</span> n.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">m</span> : nat, <span class="mi">0</span> + m = m + <span class="mi">0</span></div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="tapfa-coq-2-v-chk14" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br><span><var>IHn</var><span class="hyp-type"><b>: </b><span><span class="kr">forall</span> <span class="nv">m</span> : nat, n + m = m + n</span></span></span><br></div><label class="goal-separator" for="tapfa-coq-2-v-chk14"><hr></label><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">m</span> : nat, S n + m = m + S n</div></blockquote></div></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Abort</span>.</span></span></pre></section>
 <section id="la-tactique-destruct-preuve-par-cas">
-<h3>La tactique <code class="highlight coq"><span class="nb">destruct</span></code> : preuve par cas</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">destruct</span></code> : preuve par cas<a class="self-link" title="link to this section" href="#la-tactique-destruct-preuve-par-cas"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk15" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk15"><span class="kn">Theorem</span> <span class="nf">addn1_neq0</span> : <span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk16" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk16"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk17" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk17"><span class="nb">destruct</span> n.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="mi">0</span> + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="tapfa-coq-2-v-chk18" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br></div><label class="goal-separator" for="tapfa-coq-2-v-chk18"><hr></label><div class="goal-conclusion">S n + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote></div></div></div></small></span></pre></section>
 <section id="la-tactique-simpl-simplification-du-but">
-<h3>La tactique <code class="highlight coq"><span class="nb">simpl</span></code> : simplification du but</h3>
+<h3>La tactique <code class="highlight coq"><span class="nb">simpl</span></code> : simplification du but<a class="self-link" title="link to this section" href="#la-tactique-simpl-simplification-du-but"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk19" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk19"><span class="nb">simpl</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="tapfa-coq-2-v-chk1a" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>n</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br></div><label class="goal-separator" for="tapfa-coq-2-v-chk1a"><hr></label><div class="goal-conclusion">S n + <span class="mi">1</span> &lt;&gt; <span class="mi">0</span></div></blockquote></div></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Abort</span>.</span></span></pre></section>
 <section id="detail-reduction-des-expressions-0-n-1-n-n-0-n-1">
-<h3>Détail : réduction des expressions <code class="highlight coq"><span class="mi">0</span><span class="o">+</span><span class="n">n</span></code>, <code class="highlight coq"><span class="mi">1</span><span class="o">+</span><span class="n">n</span></code>, <code class="highlight coq"><span class="n">n</span><span class="o">+</span><span class="mi">0</span></code>, <code class="highlight coq"><span class="n">n</span><span class="o">+</span><span class="mi">1</span></code></h3>
+<h3>Détail : réduction des expressions <code class="highlight coq"><span class="mi">0</span><span class="o">+</span><span class="n">n</span></code>, <code class="highlight coq"><span class="mi">1</span><span class="o">+</span><span class="n">n</span></code>, <code class="highlight coq"><span class="n">n</span><span class="o">+</span><span class="mi">0</span></code>, <code class="highlight coq"><span class="n">n</span><span class="o">+</span><span class="mi">1</span></code><a class="self-link" title="link to this section" href="#detail-reduction-des-expressions-0-n-1-n-n-0-n-1"></a></h3>
 <p>Étant donnée que la fonction <code class="highlight coq"><span class="o">(</span><span class="kr">fun</span> <span class="nv">a</span> <span class="nv">b</span> <span class="o">:</span> <span class="n">nat</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span></code> est
 définie récursivement par rapport à son premier argument :</p>
 <ul>
@@ -238,7 +238,7 @@ définie récursivement par rapport à son premier argument :</p>
 <p>Pour plus de détails, voir l’Aide-mémoire des tactiques de preuve Coq</p>
 </section>
 <section id="retour-sur-la-correspondance-preuve-programme-curry-howard">
-<h3>Retour sur la correspondance &quot;preuve-programme&quot; (Curry-Howard)</h3>
+<h3>Retour sur la correspondance &quot;preuve-programme&quot; (Curry-Howard)<a class="self-link" title="link to this section" href="#retour-sur-la-correspondance-preuve-programme-curry-howard"></a></h3>
 <p>Coq fournit un langage de tactiques qui permet de construire
 <strong>interactivement</strong> et <strong>incrémentalement</strong>, un programme fonctionnel
 (le &quot;terme de preuve&quot;).  Lorsque la construction de ce programme est
@@ -266,9 +266,9 @@ ainsi que le raccourci <span class="docutils literal"><span class="pre">C-c</spa
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span></span></pre></section>
 </section>
 <section id="exemples-et-exercices-autour-des-listes">
-<h2>Exemples et exercices autour des listes</h2>
+<h2>Exemples et exercices autour des listes<a class="self-link" title="link to this section" href="#exemples-et-exercices-autour-des-listes"></a></h2>
 <section id="preliminaires">
-<h3>Préliminaires</h3>
+<h3>Préliminaires<a class="self-link" title="link to this section" href="#preliminaires"></a></h3>
 <p>Pour charger la bibliothèque des listes (et les notations
 à la OCaml) puis activer les arguments implicites pour vos définitions,
 ajoutez au début de votre fichier :</p>
@@ -276,7 +276,7 @@ ajoutez au début de votre fichier :</p>
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> ListNotations.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Set Implicit Arguments</span>.</span></span></pre></section>
 <section id="quelques-preuves-de-theoremes-de-la-stdlib-sur-les-listes">
-<h3>Quelques preuves (de théorèmes de la stdlib) sur les listes</h3>
+<h3>Quelques preuves (de théorèmes de la stdlib) sur les listes<a class="self-link" title="link to this section" href="#quelques-preuves-de-theoremes-de-la-stdlib-sur-les-listes"></a></h3>
 <p><strong>But</strong> Prouver que la double inversion d’une liste renvoie la liste
 inchangée :</p>
 <pre class="code Coq literal-block"><code><span class="kr">∀</span> <span class="nv">T</span> <span class="o">(</span><span class="nv">l</span> <span class="o">:</span> <span class="n">list</span> <span class="n">T</span><span class="o">),</span> <span class="n">rev</span> <span class="o">(</span><span class="n">rev</span> <span class="n">l</span><span class="o">)</span> <span class="o">=</span> <span class="n">l</span></code></pre>
@@ -291,7 +291,7 @@ inchangée :</p>
 mesure les lemmes intermédiaires qui méritent d’être prouvés à part.</p>
 </section>
 <section id="premier-lemme">
-<h3>Premier lemme</h3>
+<h3>Premier lemme<a class="self-link" title="link to this section" href="#premier-lemme"></a></h3>
 <p>Prouver (par induction sur la liste <code class="highlight coq"><span class="n">l1</span></code>) que l’on a :</p>
 <pre class="code Coq literal-block"><code><span class="kn">Lemma</span> <span class="nf">app_nil</span> <span class="o">:</span> <span class="kr">forall</span> <span class="o">(</span><span class="nv">T</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="nv">l</span> <span class="o">:</span> <span class="n">list</span> <span class="n">T</span><span class="o">),</span> <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">++</span> <span class="o">[].</span></code></pre>
 <p>Rappel: la fonction <code class="highlight coq"><span class="o">(</span><span class="kr">fun</span> <span class="nv">l1</span> <span class="nv">l2</span> <span class="o">=&gt;</span> <span class="n">l1</span> <span class="o">++</span> <span class="n">l2</span><span class="o">)</span></code> est définie comme suit :</p>
@@ -303,7 +303,7 @@ mesure les lemmes intermédiaires qui méritent d’être prouvés à part.</p>
 <p>Sauriez vous l'écrire en OCaml ?</p>
 </section>
 <section id="premier-lemme-preuve-par-induction">
-<h3>Premier lemme – preuve par induction</h3>
+<h3>Premier lemme – preuve par induction<a class="self-link" title="link to this section" href="#premier-lemme-preuve-par-induction"></a></h3>
 <p>À la main :</p>
 <p>Prouvons le lemme <code class="highlight coq"><span class="n">app_nil</span></code> par induction structurelle sur la liste <code class="highlight coq"><span class="n">l</span></code>.</p>
 <ul class="simple">
@@ -320,7 +320,7 @@ En simplifiant la définition de <code class="highlight coq"><span class="n">app
 </ul>
 </section>
 <section id="premier-lemme-preuve-par-induction-version-coq">
-<h3>Premier lemme – preuve par induction (version Coq)</h3>
+<h3>Premier lemme – preuve par induction (version Coq)<a class="self-link" title="link to this section" href="#premier-lemme-preuve-par-induction-version-coq"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk21" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk21"><span class="kn">Lemma</span> <span class="nf">app_nil</span> : <span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ [].</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ []</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk22" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk22"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), l = l ++ []</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk23" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk23"><span class="nb">induction</span> l.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>T</var><span class="hyp-type"><b>: </b><span><span class="kt">Type</span></span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">[] = [] ++ []</div></blockquote><div class="alectryon-extra-goals"><input class="alectryon-extra-goal-toggle" id="tapfa-coq-2-v-chk24" style="display: none" type="checkbox"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>T</var><span class="hyp-type"><b>: </b><span><span class="kt">Type</span></span></span></span><br><span><var>a</var><span class="hyp-type"><b>: </b><span>T</span></span></span><br><span><var>l</var><span class="hyp-type"><b>: </b><span>list T</span></span></span><br><span><var>IHl</var><span class="hyp-type"><b>: </b><span>l = l ++ []</span></span></span><br></div><label class="goal-separator" for="tapfa-coq-2-v-chk24"><hr></label><div class="goal-conclusion">a :: l = (a :: l) ++ []</div></blockquote></div></div></div></small><span class="alectryon-wsp">
@@ -340,7 +340,7 @@ la tactique une fois après &quot;;&quot;</p>
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span></span></pre></section>
 <section id="deuxieme-lemme">
-<h3>Deuxième lemme</h3>
+<h3>Deuxième lemme<a class="self-link" title="link to this section" href="#deuxieme-lemme"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk31" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk31"><span class="kn">Lemma</span> <span class="nf">app_assoc</span> :
   <span class="kr">forall</span> <span class="nv">T</span> (<span class="nv">l1</span> <span class="nv">l2</span> <span class="nv">l3</span> : list T), l1 ++ (l2 ++ l3) = (l1 ++ l2) ++ l3.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l1</span> <span class="nv">l2</span> <span class="nv">l3</span> : list T),
 l1 ++ l2 ++ l3 = (l1 ++ l2) ++ l3</div></blockquote></div></div></small><span class="alectryon-wsp">
@@ -356,7 +356,7 @@ l1 ++ l2 ++ l3 = (l1 ++ l2) ++ l3</span></span></span><br><span><var>l2, l3</var
 pour prouver le sous-but ; sinon la tactique ne fait rien.</p>
 </section>
 <section id="troisieme-lemme">
-<h3>Troisième lemme</h3>
+<h3>Troisième lemme<a class="self-link" title="link to this section" href="#troisieme-lemme"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk35" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk35"><span class="kn">Lemma</span> <span class="nf">rev_app_distr</span> :
   <span class="kr">forall</span> <span class="nv">T</span> (<span class="nv">l1</span> <span class="nv">l2</span> : list T), rev (l1 ++ l2) = rev l2 ++ rev l1.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l1</span> <span class="nv">l2</span> : list T),
 rev (l1 ++ l2) = rev l2 ++ rev l1</div></blockquote></div></div></small><span class="alectryon-wsp">
@@ -373,7 +373,7 @@ rev (l1 ++ l2) = rev l2 ++ rev l1</span></span></span><br><span><var>l2</var><sp
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span></span></pre></section>
 <section id="le-theoreme-vise">
-<h3>Le théorème visé</h3>
+<h3>Le théorème visé<a class="self-link" title="link to this section" href="#le-theoreme-vise"></a></h3>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk3c" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk3c"><span class="kn">Theorem</span> <span class="nf">rev_involutive</span> : <span class="kr">forall</span> <span class="nv">T</span> (<span class="nv">l</span> : list T), rev (rev l) = l.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), rev (rev l) = l</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-2-v-chk3d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-2-v-chk3d"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">T</span> : <span class="kt">Type</span>) (<span class="nv">l</span> : list T), rev (rev l) = l</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="c">(* exercice ! *)</span>

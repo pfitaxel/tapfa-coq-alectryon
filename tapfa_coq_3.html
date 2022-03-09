@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>TAPFA - Partie Coq - Modules et Types Abstraits</title>
-<meta name="date" content="L3 Info, Semestre 6, Année 2021-2022" />
-<script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
+<meta name="dcterms.date" content="L3 Info, Semestre 6, Année 2021-2022" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/"/><script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
 <link rel="stylesheet" href="alectryon.css" type="text/css" />
 <link rel="stylesheet" href="docutils_basic.css" type="text/css" />
 <link rel="stylesheet" href="pygments.css" type="text/css" />
@@ -16,33 +16,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.1. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document" id="tapfa-partie-coq-modules-et-types-abstraits">
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.12.0+0.12.1. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><main id="tapfa-partie-coq-modules-et-types-abstraits">
 <h1 class="title">TAPFA - Partie Coq - Modules et Types Abstraits</h1>
-<table class="docinfo" frame="void" rules="none">
-<col class="docinfo-name" />
-<col class="docinfo-content" />
-<tbody valign="top">
-<tr class="auteurs field"><th class="docinfo-name">Auteurs:</th><td class="field-body">Jean-Paul Bodeveix (resp. UE), Erik Martin-Dorel, Pierre Roux</td>
-</tr>
-<tr><th class="docinfo-name">Date:</th>
-<td>L3 Info, Semestre 6, Année 2021-2022</td></tr>
-</tbody>
-</table>
+<dl class="docinfo simple">
+<dt class="auteurs">Auteurs<span class="colon">:</span></dt>
+<dd class="auteurs"><p>Jean-Paul Bodeveix (resp. UE), Erik Martin-Dorel, Pierre Roux</p>
+</dd>
+<dt class="date">Date<span class="colon">:</span></dt>
+<dd class="date">L3 Info, Semestre 6, Année 2021-2022</dd>
+</dl>
 <input type="checkbox" class="alectryon-toggle" id="alectryon-toggle-0" /><label for="alectryon-toggle-0" class="alectryon-toggle-label">Display all goals and responses</label><div class="alectryon-container docutils container">
 <p>Supports de ce cours :</p>
 <ul class="simple">
-<li><a class="reference external" href="https://pfitaxel.github.io/tapfa-coq-alectryon/">https://pfitaxel.github.io/tapfa-coq-alectryon/</a></li>
+<li><p><a class="reference external" href="https://pfitaxel.github.io/tapfa-coq-alectryon/">https://pfitaxel.github.io/tapfa-coq-alectryon/</a></p></li>
 </ul>
-<div class="section" id="modules-en-coq-et-application-aux-tad">
-<h1>Modules en Coq et application aux TAD</h1>
-<div class="section" id="specification-de-modules-types-de-modules">
-<h2>1. Spécification de modules (types de modules)</h2>
+<section id="modules-en-coq-et-application-aux-tad">
+<h2>Modules en Coq et application aux TAD</h2>
+<section id="specification-de-modules-types-de-modules">
+<h3>1. Spécification de modules (types de modules)</h3>
 <p>Déclaration d’identificateurs.</p>
-<p>On distingue&nbsp;:</p>
+<p>On distingue :</p>
 <ul class="simple">
-<li>des identificateurs de types</li>
-<li>des identificateurs de constantes ou d’opérations</li>
-<li>des identificateurs de propriétés (axiomes)</li>
+<li><p>des identificateurs de types</p></li>
+<li><p>des identificateurs de constantes ou d’opérations</p></li>
+<li><p>des identificateurs de propriétés (axiomes)</p></li>
 </ul>
 <p>Exemple</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module Type</span> <span class="nf">Monoide</span>.</span><span class="alectryon-wsp">
@@ -54,22 +51,22 @@
     <span class="kr">forall</span> <span class="nv">x</span> <span class="nv">y</span> <span class="nv">z</span> : T, prod x (prod y z) = prod (prod x y) z.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Axiom</span> <span class="nv">neutre_g</span> : <span class="kr">forall</span> <span class="nv">x</span>, prod un x = x.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Axiom</span> <span class="nv">neutre_d</span> : <span class="kr">forall</span> <span class="nv">x</span>, prod x un = x.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Monoide</span>.</span></span></pre></div>
-<div class="section" id="modules-realisant-une-specification">
-<h2>2. Modules réalisant une spécification</h2>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Monoide</span>.</span></span></pre></section>
+<section id="modules-realisant-une-specification">
+<h3>2. Modules réalisant une spécification</h3>
 <p>Définition des identificateurs déclarés dans la spécification</p>
-<p>Implantations possibles du monoide&nbsp;:</p>
+<p>Implantations possibles du monoide :</p>
 <ul class="simple">
-<li>entiers avec <span class="math">\(0\)</span> et <span class="math">\(+\)</span></li>
-<li>entiers avec <span class="math">\(1\)</span> et <span class="math">\(*\)</span></li>
-<li>listes avec concaténation</li>
-<li>type singleton</li>
-<li>…</li>
+<li><p>entiers avec <span class="math">\(0\)</span> et <span class="math">\(+\)</span></p></li>
+<li><p>entiers avec <span class="math">\(1\)</span> et <span class="math">\(*\)</span></p></li>
+<li><p>listes avec concaténation</p></li>
+<li><p>type singleton</p></li>
+<li><p>…</p></li>
 </ul>
-</div>
-<div class="section" id="modules-realisant-une-specification-1">
-<h2>2. Modules réalisant une spécification</h2>
-<p>Exemple&nbsp;: monoide des listes avec concaténation</p>
+</section>
+<section id="modules-realisant-une-specification-1">
+<h3>2. Modules réalisant une spécification</h3>
+<p>Exemple : monoide des listes avec concaténation</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Require Import</span> List.</span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> ListNotations.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Set Implicit Arguments</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">
@@ -89,10 +86,10 @@ prod x (prod y z) = prod (prod x y) z</div></blockquote></div></div></small><spa
 </span></span><span class="alectryon-wsp">
 </span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk4" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk4"><span class="kn">Lemma</span> <span class="nf">neutre_d</span> : <span class="kr">forall</span> <span class="nv">x</span>, prod x un = x.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">x</span> : T, prod x un = x</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk5" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk5"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">x</span> : T, prod x un = x</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk6" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk6"><span class="nb">induction</span> x; <span class="nb">auto</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br><span><var>x</var><span class="hyp-type"><b>: </b><span>list nat</span></span></span><br><span><var>IHx</var><span class="hyp-type"><b>: </b><span>prod x un = x</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">prod (a :: x) un = a :: x</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk7" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk7"><span class="nb">simpl</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br><span><var>x</var><span class="hyp-type"><b>: </b><span>list nat</span></span></span><br><span><var>IHx</var><span class="hyp-type"><b>: </b><span>prod x un = x</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a :: prod x un = a :: x</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk8" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk8"><span class="nb">rewrite</span> IHx.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a</var><span class="hyp-type"><b>: </b><span>nat</span></span></span><br><span><var>x</var><span class="hyp-type"><b>: </b><span>list nat</span></span></span><br><span><var>IHx</var><span class="hyp-type"><b>: </b><span>prod x un = x</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a :: x = a :: x</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">MonoList</span>.</span></span></pre></div>
-<div class="section" id="utilisation-independante-de-limplantation-foncteur">
-<h2>3. Utilisation indépendante de l’implantation (foncteur)</h2>
-<p>Exemple&nbsp;: unicité de l’élément neutre</p>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">MonoList</span>.</span></span></pre></section>
+<section id="utilisation-independante-de-limplantation-foncteur">
+<h3>3. Utilisation indépendante de l’implantation (foncteur)</h3>
+<p>Exemple : unicité de l’élément neutre</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module</span> <span class="nf">Use</span>(M : Monoide).</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk9" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk9"><span class="kn">Theorem</span> <span class="nf">unicite</span> :
     <span class="kr">forall</span> <span class="nv">u</span> : M.T, (<span class="kr">forall</span> <span class="nv">x</span>, M.prod x u = x) -&gt; u = M.un.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> <span class="nv">u</span> : M.T,
@@ -104,9 +101,9 @@ prod x (prod y z) = prod (prod x y) z</div></blockquote></div></div></small><spa
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chkd" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chkd"><span class="nb">rewrite</span> M.neutre_g.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>u</var><span class="hyp-type"><b>: </b><span>M.T</span></span></span><br><span><var>Hu</var><span class="hyp-type"><b>: </b><span><span class="kr">forall</span> <span class="nv">x</span> : M.T, M.prod x u = x</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">u = u</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Use</span>.</span></span></pre></div>
-<div class="section" id="instantiation-du-foncteur-a-k-a-module-parametre">
-<h2>4. Instantiation du foncteur (a.k.a. module paramétré)</h2>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Use</span>.</span></span></pre></section>
+<section id="instantiation-du-foncteur-a-k-a-module-parametre">
+<h3>4. Instantiation du foncteur (a.k.a. module paramétré)</h3>
 <p>Exemple</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module</span> <span class="nf">Inst</span> := Use(MonoList).</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-3-v-chke" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chke"><span class="kn">Check</span> Inst.unicite.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">Inst.unicite
@@ -117,17 +114,17 @@ prod x (prod y z) = prod (prod x y) z</div></blockquote></div></div></small><spa
 </span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-3-v-chkf" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chkf"><span class="kn">Print</span> MonoList.un.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">MonoList.un = []
      : MonoList.T</blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-3-v-chk10" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk10"><span class="kn">Print</span> MonoList.T.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">MonoList.T = list nat
-     : <span class="kt">Set</span></blockquote></div></div></small></span></pre></div>
-</div>
-<div class="section" id="exemple-autour-de-la-structure-de-pile">
-<h1>Exemple autour de la structure de pile</h1>
-<div class="section" id="signature-dun-tad-pile">
-<h2>Signature d’un TAD Pile</h2>
+     : <span class="kt">Set</span></blockquote></div></div></small></span></pre></section>
+</section>
+<section id="exemple-autour-de-la-structure-de-pile">
+<h2>Exemple autour de la structure de pile</h2>
+<section id="signature-dun-tad-pile">
+<h3>Signature d’un TAD Pile</h3>
 <p>Ecrire la spécification du type abstrait tPile introduisant un type
 Elem, un type P, et les opérations habituelles sur les piles. On
 essaiera d’étendre au maximum le domaine des fonctions partielles (par
 ex. en retournant la pile vide), ou si besoin en utilisant le type
-option&nbsp;:</p>
+option :</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Inductive</span> <span class="nf">option</span> {<span class="nv">T</span> : <span class="kt">Type</span>} := None | Some (valeur : T).</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">
 </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module Type</span> <span class="nf">Pile</span>.</span><span class="alectryon-wsp">
@@ -147,9 +144,9 @@ option&nbsp;:</p>
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Axiom</span> <span class="nv">top_push</span> : <span class="kr">forall</span> <span class="nv">p</span> <span class="nv">e</span>, top (push e p) = Some e.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Axiom</span> <span class="nv">pop_vide</span> : pop vide = vide.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Axiom</span> <span class="nv">pop_push</span> : <span class="kr">forall</span> <span class="nv">p</span> <span class="nv">e</span>, pop (push e p) = p.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile</span>.</span></span></pre></div>
-<div class="section" id="implementation-du-tad-pile">
-<h2>Implémentation du TAD Pile</h2>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile</span>.</span></span></pre></section>
+<section id="implementation-du-tad-pile">
+<h3>Implémentation du TAD Pile</h3>
 <p>Implémentez un TAD Pile d’entiers naturels,
 en vous appuyant sur la bibliothèque des listes.</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module</span> <span class="nf">Pile_Liste</span> &lt;: Pile.</span><span class="alectryon-wsp">
@@ -181,9 +178,9 @@ en vous appuyant sur la bibliothèque des listes.</p>
 </span></span><span class="alectryon-wsp">
 </span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk1d" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk1d"><span class="kn">Lemma</span> <span class="nf">pop_push</span> : <span class="kr">forall</span> <span class="nv">p</span> <span class="nv">e</span>, pop (push e p) = p.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">p</span> : P) (<span class="nv">e</span> : Elem), pop (push e p) = p</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk1e" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk1e"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">p</span> : P) (<span class="nv">e</span> : Elem), pop (push e p) = p</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-3-v-chk1f" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-3-v-chk1f"><span class="nb">intros</span> p e.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>p</var><span class="hyp-type"><b>: </b><span>P</span></span></span><br><span><var>e</var><span class="hyp-type"><b>: </b><span>Elem</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">pop (push e p) = p</div></blockquote></div></div></small><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="bp">reflexivity</span>.</span><span class="alectryon-wsp"> </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile_Liste</span>.</span></span></pre></div>
-<div class="section" id="autre-exemple-dimplementation">
-<h2>Autre exemple d’implémentation</h2>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile_Liste</span>.</span></span></pre></section>
+<section id="autre-exemple-dimplementation">
+<h3>Autre exemple d’implémentation</h3>
 <p>Peut-on implémenter le même TAD avec des
 listes, mais en empilant et dépilant en queue ?</p>
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module</span> <span class="nf">Pile_QListe</span> &lt;: Pile.</span><span class="alectryon-wsp">
@@ -220,9 +217,9 @@ listes, mais en empilant et dépilant en queue ?</p>
 pop (push e (a :: n :: p)) = a :: n :: p</div></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="nb">intros</span> e; <span class="nb">rewrite</span> &lt;-(IHp e) <span class="nb">at</span> <span class="mi">2</span>; <span class="nb">auto</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span><span class="alectryon-wsp">
-</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile_QListe</span>.</span></span></pre></div>
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Pile_QListe</span>.</span></span></pre></section>
+</section>
 </div>
-</div>
-</div>
+</main>
 </div></body>
 </html>

@@ -869,7 +869,10 @@ Fixpoint long_v2 T (l : liste T) :=
 Eval compute in long_v2 liste1.
 
 (*|
-**Remarque**: Coq n'est pas limité aux fonctions primitives récursives. Par exemple, la fonction d'Ackermann peut être définie comme ci-dessous et il serait possible de démontrer qu'elle vérifie la définition usuelle.
+**Remarque:**
+Coq n'est pas limité aux fonctions primitives récursives. Par exemple, la `fonction d'Ackermann <https://mathworld.wolfram.com/AckermannFunction.html>`_ peut être définie comme ci-dessous et il serait possible de démontrer qu'elle est identique à la définition usuelle:
+
+.. image:: https://mathworld.wolfram.com/images/equations/AckermannFunction/NumberedEquation1.svg
 |*)
 
 Fixpoint pow (f:nat->nat) n a :=

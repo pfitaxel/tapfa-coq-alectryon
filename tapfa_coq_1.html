@@ -795,7 +795,9 @@ Cons (Succ Zero) (Vide entier_nat)
   <span class="kr">end</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">
 </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk31" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk31"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> long_v2 liste1.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">= Succ Zero
-: entier_nat</blockquote></div></div></small></span></pre><p><strong>Remarque</strong>: Coq n'est pas limité aux fonctions primitives récursives. Par exemple, la fonction d'Ackermann peut être définie comme ci-dessous et il serait possible de démontrer qu'elle vérifie la définition usuelle.</p>
+: entier_nat</blockquote></div></div></small></span></pre><p><strong>Remarque:</strong>
+Coq n'est pas limité aux fonctions primitives récursives. Par exemple, la <a class="reference external" href="https://mathworld.wolfram.com/AckermannFunction.html">fonction d'Ackermann</a> peut être définie comme ci-dessous et il serait possible de démontrer qu'elle est identique à la définition usuelle:</p>
+<img alt="https://mathworld.wolfram.com/images/equations/AckermannFunction/NumberedEquation1.svg" src="https://mathworld.wolfram.com/images/equations/AckermannFunction/NumberedEquation1.svg" />
 <pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Fixpoint</span> <span class="nf">pow</span> (<span class="nv">f</span>:nat-&gt;nat) <span class="nv">n</span> <span class="nv">a</span> :=
   <span class="kr">match</span> n <span class="kr">with</span>
     <span class="mi">0</span> =&gt; a

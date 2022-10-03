@@ -53,6 +53,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .nt, .code .nt { color: #a40000 } /* Name.Tag */
 .highlight .nv, .code .nv { color: #ce5c00 } /* Name.Variable */
 .highlight .ow, .code .ow { color: #8f5902 } /* Operator.Word */
+.highlight .pm, .code .pm { color: #000000 } /* Punctuation.Marker */
 .highlight .w, .code .w { color: #d3d7cf; text-decoration: underline } /* Text.Whitespace */
 .highlight .mb, .code .mb { color: #2e3436 } /* Literal.Number.Bin */
 .highlight .mf, .code .mf { color: #2e3436 } /* Literal.Number.Float */

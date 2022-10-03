@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <title>TAPFA - Partie Coq</title>
 <meta name="dcterms.date" content="L3 Info, Semestre 6, Année 2021-2022" />
 <link rel="schema.dcterms" href="http://purl.org/dc/terms/"/><script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js?config=TeX-AMS_CHTML"></script>
@@ -795,7 +795,21 @@ Cons (Succ Zero) (Vide entier_nat)
   <span class="kr">end</span>.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">
 </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk31" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk31"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> long_v2 liste1.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">= Succ Zero
-: entier_nat</blockquote></div></div></small></span></pre></section>
+: entier_nat</blockquote></div></div></small></span></pre><p><strong>Remarque</strong>: Coq n'est pas limité aux fonctions primitives récursives. Par exemple, la fonction d'Ackermann peut être définie comme ci-dessous et il serait possible de démontrer qu'elle vérifie la définition usuelle.</p>
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Fixpoint</span> <span class="nf">pow</span> (<span class="nv">f</span>:nat-&gt;nat) <span class="nv">n</span> <span class="nv">a</span> :=
+  <span class="kr">match</span> n <span class="kr">with</span>
+    <span class="mi">0</span> =&gt; a
+  | S p =&gt; pow f p (f a)
+  <span class="kr">end</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Fixpoint</span> <span class="nf">ack</span> <span class="nv">a</span> <span class="nv">b</span> : nat :=
+<span class="kr">match</span> a <span class="kr">with</span>
+| <span class="mi">0</span> =&gt; S b
+| S a =&gt; pow (ack a) (S b) <span class="mi">1</span>
+<span class="kr">end</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><input class="alectryon-toggle" id="tapfa-coq-1-v-chk32" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk32"><span class="kn">Eval</span> <span class="nb">compute</span> <span class="kr">in</span> (ack <span class="mi">3</span> <span class="mi">4</span>).</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">= <span class="mi">125</span>
+: nat</blockquote></div></div></small><span class="alectryon-wsp">            </span></span></pre></section>
 <section id="schemas-inductifs">
 <h3>Schémas inductifs<a class="self-link" title="link to this section" href="#schemas-inductifs"></a></h3>
 <p>Preuve par récurence sur les entiers naturels (construits avec Zero, Succ)</p>
@@ -808,7 +822,7 @@ Cons (Succ Zero) (Vide entier_nat)
   <span class="o">|</span> <span class="n">Succ</span> <span class="n">n</span> <span class="o">=&gt;</span> <span class="n">fSucc</span> <span class="n">n</span> <span class="o">(</span><span class="n">entier_nat_ind</span> <span class="n">P</span> <span class="n">fZero</span> <span class="n">fSucc</span> <span class="n">n</span><span class="o">)</span>
   <span class="kr">end</span><span class="o">.</span></code></pre>
 <p>qui a pour type :</p>
-<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk32" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk32"><span class="kn">Check</span> entier_nat_ind.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">entier_nat_ind
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk33" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk33"><span class="kn">Check</span> entier_nat_ind.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">entier_nat_ind
      : <span class="kr">forall</span> <span class="nv">P</span> : entier_nat -&gt; <span class="kt">Prop</span>,
        P Zero -&gt;
        (<span class="kr">forall</span> <span class="nv">p</span> : entier_nat, P p -&gt; P (Succ p)) -&gt;
@@ -853,11 +867,11 @@ l'itérateur le plus général sur le type <code class="highlight coq"><span cla
 </span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> ListNotations.</span><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp"><span class="c">(* Set Implicit Arguments. (* déjà fait auparavant *) *)</span>
 
-</span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk33" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk33"><span class="kn">Check</span> list.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">list
+</span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk34" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk34"><span class="kn">Check</span> list.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message">list
      : <span class="kt">Type</span> -&gt; <span class="kt">Type</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span><span class="alectryon-wsp">
 
-</span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk34" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk34"><span class="kn">Print</span> list.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
+</span><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk35" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk35"><span class="kn">Print</span> list.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="kn">Inductive</span> <span class="nf">list</span> (<span class="nv">A</span> : <span class="kt">Type</span>) : <span class="kt">Type</span> :=
     nil : list A | cons : A -&gt; list A -&gt; list A
 
 <span class="kn">Arguments</span> list _%type_scope
@@ -935,7 +949,7 @@ d'arrivée dépend de l'argument</p></td>
 cependant être inféré :)</div>
 </div>
 <blockquote>
-<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk35" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk35"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><input checked="checked" class="alectryon-toggle" id="tapfa-coq-1-v-chk36" style="display: none" type="checkbox"><label class="alectryon-input" for="tapfa-coq-1-v-chk36"><span class="kn">Check</span> <span class="kr">forall</span> <span class="nv">n</span>, n + <span class="mi">1</span> &gt; n.</label><small class="alectryon-output"><div><div class="alectryon-messages"><blockquote class="alectryon-message"><span class="kr">forall</span> <span class="nv">n</span> : nat, n + <span class="mi">1</span> &gt; n
      : <span class="kt">Prop</span></blockquote></div></div></small><span class="alectryon-wsp">
 </span></span></pre></blockquote>
 </section>
